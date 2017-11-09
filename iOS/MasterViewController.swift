@@ -26,16 +26,21 @@ class MasterViewController: UITableViewController {
             // swiftlint:enable force_cast
         }
 
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.white]
+
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "PNP503"
+        searchController.searchBar.placeholder = "KCT024"
         searchController.searchBar.tintColor = UIColor.white
 
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
 
         navigationItem.searchController = searchController
         definesPresentationContext = true
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -80,7 +85,8 @@ class MasterViewController: UITableViewController {
 
         let marker = markers[indexPath.row]
 
-        cell.textLabel!.text = marker.markerId
+        cell.textLabel?.text = marker.markerId
+        cell.detailTextLabel?.text = marker.locality.localizedCapitalized
         return cell
     }
 }
@@ -102,9 +108,6 @@ extension MasterViewController: UISearchResultsUpdating {
         } else {
             markers = database.with(markerId: searchText.uppercased())
         }
-
-        print("found: \(markers.count)")
-
         tableView.reloadData()
     }
 }

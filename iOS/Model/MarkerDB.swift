@@ -48,11 +48,11 @@ struct MarkerDB {
         return markers.count
     }
 
-    func all() -> [Marker] {
+    func all() -> [MarkerProtocol] {
         return Array(markers)
     }
 
-    func with(markerId: String) -> [Marker] {
+    func with(markerId: String) -> [MarkerProtocol] {
         return Array(markers.filter("markerId CONTAINS '\(markerId)'"))
     }
 }

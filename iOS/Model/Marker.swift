@@ -9,9 +9,8 @@
 import Foundation
 import RealmSwift
 import CoreLocation
-import MapKit
 
-class Marker: Object, MKAnnotation {
+class Marker: Object, MarkerProtocol {
 
     @objc dynamic var xPosition: Double = 0
     @objc dynamic var yPosition: Double = 0

@@ -11,6 +11,7 @@
 		5509D03F1FB170DF002C9577 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D03E1FB170DF002C9577 /* Marker.swift */; };
 		5509D0451FB175F7002C9577 /* MarkerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D0441FB175F7002C9577 /* MarkerDB.swift */; };
 		552E57BD1FB18AF00053F125 /* markers.realm in Resources */ = {isa = PBXBuildFile; fileRef = 552E57BC1FB18AF00053F125 /* markers.realm */; };
+		55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
 		55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */; };
 		55E6FBA41FB16DDF00FADC4E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA31FB16DDF00FADC4E /* MasterViewController.swift */; };
 		55E6FBA61FB16DDF00FADC4E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA51FB16DDF00FADC4E /* DetailViewController.swift */; };
@@ -24,6 +25,7 @@
 		5509D0421FB17138002C9577 /* Marker.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Marker.csv; sourceTree = "<group>"; };
 		5509D0441FB175F7002C9577 /* MarkerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDB.swift; sourceTree = "<group>"; };
 		552E57BC1FB18AF00053F125 /* markers.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = markers.realm; sourceTree = "<group>"; };
+		55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocol.swift; sourceTree = "<group>"; };
 		55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E6FBA31FB16DDF00FADC4E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				552E57BC1FB18AF00053F125 /* markers.realm */,
 				5509D03E1FB170DF002C9577 /* Marker.swift */,
 				5509D0441FB175F7002C9577 /* MarkerDB.swift */,
+				55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				5509D03F1FB170DF002C9577 /* Marker.swift in Sources */,
 				55E6FBA41FB16DDF00FADC4E /* MasterViewController.swift in Sources */,
 				55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */,
+				55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
