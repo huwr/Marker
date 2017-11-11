@@ -58,6 +58,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="msH-Dt-HMI">
+                                <rect key="frame" x="273" y="88" width="127" height="29"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Satellite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapStyleChanged:" destination="JEX-9P-axG" eventType="valueChanged" id="dky-jN-y1A"/>
+                                </connections>
+                            </segmentedControl>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-1n-Efp">
                                 <rect key="frame" x="20" y="513" width="374" height="160"/>
                                 <subviews>
@@ -89,7 +99,9 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="msH-Dt-HMI" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="24" id="5yd-ed-04c"/>
                             <constraint firstItem="WBa-hS-F4K" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="DTt-ni-0FK"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="cl8-8s-lOO" secondAttribute="bottom" id="GWX-Oi-jLs"/>
                             <constraint firstItem="7fy-Vt-VJZ" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="HGw-jX-Dov"/>
@@ -97,12 +109,14 @@
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="WBa-hS-F4K" secondAttribute="trailing" constant="20" id="N78-n8-9sA"/>
                             <constraint firstItem="EN3-1n-Efp" firstAttribute="leading" secondItem="WBa-hS-F4K" secondAttribute="leading" id="ZDi-eX-TTf"/>
                             <constraint firstItem="WBa-hS-F4K" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="24" id="ZPF-ea-lRB"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="msH-Dt-HMI" secondAttribute="trailing" constant="14" id="bmz-dQ-xjn"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="cl8-8s-lOO" secondAttribute="trailing" id="clU-4V-CgC"/>
                             <constraint firstItem="EN3-1n-Efp" firstAttribute="trailing" secondItem="WBa-hS-F4K" secondAttribute="trailing" id="g4i-cg-hoP"/>
                             <constraint firstItem="cl8-8s-lOO" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="h3Q-Dt-hxo"/>
                             <constraint firstItem="7fy-Vt-VJZ" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="hdp-Du-NqI"/>
                             <constraint firstItem="cl8-8s-lOO" firstAttribute="top" secondItem="EN3-1n-Efp" secondAttribute="bottom" constant="19" id="j46-RE-u9K"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="7fy-Vt-VJZ" secondAttribute="bottom" id="oQD-aR-1Ph"/>
+                            <constraint firstItem="msH-Dt-HMI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="tEl-Uo-vvf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
@@ -111,6 +125,7 @@
                     <connections>
                         <outlet property="directionsContainerView" destination="EN3-1n-Efp" id="tUZ-Fu-ir6"/>
                         <outlet property="directionsView" destination="CTT-Ei-nCU" id="epy-He-o6X"/>
+                        <outlet property="mapStyle" destination="msH-Dt-HMI" id="9ul-qy-prE"/>
                         <outlet property="mapView" destination="7fy-Vt-VJZ" id="kTf-Mm-VVl"/>
                         <outlet property="showDirectionsButton" destination="xhU-BD-Iah" id="CCa-kX-DkH"/>
                     </connections>

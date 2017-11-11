@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var directionsView: UITextView?
     @IBOutlet weak var showDirectionsButton: UIBarButtonItem?
     @IBOutlet weak var mapView: MKMapView?
+    @IBOutlet weak var mapStyle: UISegmentedControl?
 
     var marker: MarkerProtocol? { didSet {
         configureView()
@@ -36,6 +37,7 @@ class DetailViewController: UIViewController {
     var mapHidden: Bool = true { didSet {
         navigationItem.rightBarButtonItem?.isEnabled = !mapHidden
         showDirectionsButton?.isEnabled = !mapHidden
+        mapStyle?.isHidden = mapHidden
         mapView?.isHidden = mapHidden
     } }
 
@@ -63,6 +65,17 @@ class DetailViewController: UIViewController {
 
     let regionRadius: CLLocationDistance = 1000
 
+    // MARK: Map Style
+
+    @IBAction func mapStyleChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            mapView?.mapType = .standard
+        default:
+            mapView?.mapType = .hybrid
+        }
+    }
+
     // MARK: View lifecycle
 
     func configureView() {
@@ -76,6 +89,11 @@ class DetailViewController: UIViewController {
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             directionsContainerView.insertSubview(blurEffectView, belowSubview: directionsView)
         }
+
+        //MapStyle segment control
+        mapStyle?.backgroundColor = .white
+        mapStyle?.layer.cornerRadius = 4.0
+        mapStyle?.clipsToBounds = true
     }
 
     override func viewDidLoad() {
