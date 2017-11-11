@@ -26,6 +26,8 @@ class MarkerViewController: UIViewController {
 
     var directionsHidden: Bool = true { didSet {
         showDirectionsButton?.title = directionsHidden ? "Show Directions" : "Hide Directions"
+        directionsView?.flashScrollIndicators()
+        directionsView?.setContentOffset(.zero, animated: true)
         directionsContainerView?.isHidden = directionsHidden
     } }
 
