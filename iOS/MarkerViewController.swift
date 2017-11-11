@@ -14,6 +14,7 @@ class MarkerViewController: UIViewController {
     @IBOutlet weak var directionsContainerView: UIView?
     @IBOutlet weak var directionsView: UITextView?
     @IBOutlet weak var showDirectionsButton: UIBarButtonItem?
+    @IBOutlet weak var showMoreInfoButton: UIBarButtonItem?
     @IBOutlet weak var mapView: MKMapView?
     @IBOutlet weak var mapStyle: UISegmentedControl?
 
@@ -37,6 +38,7 @@ class MarkerViewController: UIViewController {
     var mapHidden: Bool = true { didSet {
         navigationItem.rightBarButtonItem?.isEnabled = !mapHidden
         showDirectionsButton?.isEnabled = !mapHidden
+        showMoreInfoButton?.isEnabled = !mapHidden
         mapStyle?.isHidden = mapHidden
         mapView?.isHidden = mapHidden
     } }
@@ -105,5 +107,12 @@ class MarkerViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         configureView()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMoreInfo", let destinationNC = segue.destination as? UINavigationController,
+            let destinationVC = destinationNC.viewControllers.first as? MoreInfoViewController {
+            destinationVC.marker = marker
+        }
     }
 }

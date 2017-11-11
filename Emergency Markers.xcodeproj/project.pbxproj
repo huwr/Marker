@@ -11,12 +11,14 @@
 		5509D03F1FB170DF002C9577 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D03E1FB170DF002C9577 /* Marker.swift */; };
 		5509D0451FB175F7002C9577 /* MarkerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D0441FB175F7002C9577 /* MarkerDB.swift */; };
 		552E57BD1FB18AF00053F125 /* markers.realm in Resources */ = {isa = PBXBuildFile; fileRef = 552E57BC1FB18AF00053F125 /* markers.realm */; };
+		5534F7181FB6A3EF00CDAF71 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7171FB6A3EF00CDAF71 /* MoreInfoViewController.swift */; };
+		5534F71C1FB6A79E00CDAF71 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5534F71B1FB6A79E00CDAF71 /* icon.png */; };
+		5534F7201FB6A9E100CDAF71 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534F71F1FB6A9E000CDAF71 /* Media.xcassets */; };
 		55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
 		55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */; };
 		55E6FBA41FB16DDF00FADC4E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */; };
 		55E6FBA61FB16DDF00FADC4E /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA51FB16DDF00FADC4E /* MarkerViewController.swift */; };
 		55E6FBA91FB16DDF00FADC4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E6FBA71FB16DDF00FADC4E /* Main.storyboard */; };
-		55E6FBAB1FB16DDF00FADC4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E6FBAA1FB16DDF00FADC4E /* Assets.xcassets */; };
 		55E6FBAE1FB16DDF00FADC4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E6FBAC1FB16DDF00FADC4E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +27,16 @@
 		5509D0421FB17138002C9577 /* Marker.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Marker.csv; sourceTree = "<group>"; };
 		5509D0441FB175F7002C9577 /* MarkerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDB.swift; sourceTree = "<group>"; };
 		552E57BC1FB18AF00053F125 /* markers.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = markers.realm; sourceTree = "<group>"; };
+		5534F7171FB6A3EF00CDAF71 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		5534F71A1FB6A77300CDAF71 /* icon.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.acorn; sourceTree = "<group>"; };
+		5534F71B1FB6A79E00CDAF71 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		5534F71F1FB6A9E000CDAF71 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../../../Desktop/Media.xcassets; sourceTree = "<group>"; };
 		55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocol.swift; sourceTree = "<group>"; };
 		55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		55E6FBA51FB16DDF00FADC4E /* MarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewController.swift; sourceTree = "<group>"; };
 		55E6FBA81FB16DDF00FADC4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		55E6FBAA1FB16DDF00FADC4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55E6FBAD1FB16DDF00FADC4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55E6FBAF1FB16DDF00FADC4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59F509BF2AC4B99B4D1571D5 /* Pods-Emergency Markers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emergency Markers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emergency Markers/Pods-Emergency Markers.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,9 +76,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5534F7191FB6A76500CDAF71 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				5534F71A1FB6A77300CDAF71 /* icon.acorn */,
+				5534F71B1FB6A79E00CDAF71 /* icon.png */,
+			);
+			path = Art;
+			sourceTree = "<group>";
+		};
 		55E6FB951FB16DDF00FADC4E = {
 			isa = PBXGroup;
 			children = (
+				5534F7191FB6A76500CDAF71 /* Art */,
 				5509D0421FB17138002C9577 /* Marker.csv */,
 				55E6FBA01FB16DDF00FADC4E /* iOS */,
 				55E6FB9F1FB16DDF00FADC4E /* Products */,
@@ -98,7 +113,8 @@
 				55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */,
 				55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */,
 				55E6FBA51FB16DDF00FADC4E /* MarkerViewController.swift */,
-				55E6FBAA1FB16DDF00FADC4E /* Assets.xcassets */,
+				5534F7171FB6A3EF00CDAF71 /* MoreInfoViewController.swift */,
+				5534F71F1FB6A9E000CDAF71 /* Media.xcassets */,
 				55E6FBAF1FB16DDF00FADC4E /* Info.plist */,
 			);
 			path = iOS;
@@ -188,8 +204,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55E6FBAE1FB16DDF00FADC4E /* LaunchScreen.storyboard in Resources */,
+				5534F71C1FB6A79E00CDAF71 /* icon.png in Resources */,
 				552E57BD1FB18AF00053F125 /* markers.realm in Resources */,
-				55E6FBAB1FB16DDF00FADC4E /* Assets.xcassets in Resources */,
+				5534F7201FB6A9E100CDAF71 /* Media.xcassets in Resources */,
 				55E6FBA91FB16DDF00FADC4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +290,7 @@
 				55E6FBA61FB16DDF00FADC4E /* MarkerViewController.swift in Sources */,
 				5509D0451FB175F7002C9577 /* MarkerDB.swift in Sources */,
 				5509D03F1FB170DF002C9577 /* Marker.swift in Sources */,
+				5534F7181FB6A3EF00CDAF71 /* MoreInfoViewController.swift in Sources */,
 				55E6FBA41FB16DDF00FADC4E /* SearchViewController.swift in Sources */,
 				55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */,
 				55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */,
