@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class DetailViewController: UIViewController {
+class MarkerViewController: UIViewController {
 
     @IBOutlet weak var directionsContainerView: UIView?
     @IBOutlet weak var directionsView: UITextView?

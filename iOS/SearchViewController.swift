@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class SearchViewController: UITableViewController {
 
-    var detailViewController: DetailViewController?
+    var detailViewController: MarkerViewController?
     var database = MarkerDB()
     lazy var markers = database.all()
 
@@ -22,7 +22,7 @@ class MasterViewController: UITableViewController {
         if let split = splitViewController {
             let controllers = split.viewControllers
             // swiftlint:disable force_cast
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? MarkerViewController
             // swiftlint:enable force_cast
         }
 
@@ -60,7 +60,7 @@ class MasterViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 // swiftlint:disable force_cast
                 let object = markers[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                let controller = (segue.destination as! UINavigationController).topViewController as! MarkerViewController
                 // swiftlint:enable force_cast
                 controller.marker = object
                 controller.navigationItem.title = object.markerId
@@ -91,7 +91,7 @@ class MasterViewController: UITableViewController {
     }
 }
 
-extension MasterViewController: UISearchResultsUpdating {
+extension SearchViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
