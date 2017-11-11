@@ -11,19 +11,20 @@ import MapKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var directionsContainerView: UIView?
     @IBOutlet weak var directionsView: UITextView?
     @IBOutlet weak var showDirectionsButton: UIBarButtonItem?
     @IBOutlet weak var mapView: MKMapView?
 
     var marker: MarkerProtocol? { didSet {
-            configureView()
+        configureView()
     } }
 
     // MARK: Directions
 
     var directionsHidden: Bool = true { didSet {
         showDirectionsButton?.title = directionsHidden ? "Show Directions" : "Hide Directions"
-        directionsView?.isHidden = directionsHidden
+        directionsContainerView?.isHidden = directionsHidden
     } }
 
     @IBAction func showDirectionsTapped(_ sender: UIBarButtonItem) {
@@ -67,6 +68,14 @@ class DetailViewController: UIViewController {
     func configureView() {
         navigationItem.largeTitleDisplayMode = .never
         configureMapView()
+
+        if let directionsContainerView = directionsContainerView, let directionsView = directionsView {
+            let blurEffect = UIBlurEffect(style: .regular)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = directionsContainerView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            directionsContainerView.insertSubview(blurEffectView, belowSubview: directionsView)
+        }
     }
 
     override func viewDidLoad() {

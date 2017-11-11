@@ -40,5 +40,7 @@ extension MarkerProtocol {
             .replacingOccurrences(of: "=>", with: "\t→")
             .replacingOccurrences(of: title, with: "")
             .replacingOccurrences(of: "NEAREST I/S", with: "NEAREST INTERSECTION:")
+            .replacingOccurrences(of: "   ", with: " ")
+            .replacingOccurrences(of: "  ", with: " ")
     }
 }

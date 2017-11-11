@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap 'Search' to begin…" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBa-hS-F4K">
-                                <rect key="frame" x="20" y="88" width="374" height="31.666666666666671"/>
+                                <rect key="frame" x="20" y="88" width="374" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,22 +48,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fy-Vt-VJZ">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </mapView>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CTT-Ei-nCU" userLabel="Directions">
-                                <rect key="frame" x="20" y="511" width="374" height="164"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="164" id="GrX-Ko-0oh"/>
-                                </constraints>
-                                <string key="text">EMERG MRKR PIP600: NEAREST I/S VAN NESS AV &amp; WARRS RD
-=&gt; ACCESS TO LOCKED GATES CONTACT PARKS VIC ON 131963
-=&gt; TRAVEL SOUTH-EAST 450M ON ROAD TO CAR PARK ENTRANCE
-=&gt; THEN NORTH-EAST 90M DOWN RAMP
-=&gt; THEN EAST 45M TO ASHPALT FOOTPATH
-=&gt; THEN NORTH-EAST 40M TO RIVER AND JETTY</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
-                            </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cl8-8s-lOO">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
@@ -74,6 +58,35 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-1n-Efp">
+                                <rect key="frame" x="20" y="513" width="374" height="160"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CTT-Ei-nCU" userLabel="Directions">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="160"/>
+                                        <string key="text">EMERG MRKR PIP600: NEAREST I/S VAN NESS AV &amp; WARRS RD
+=&gt; ACCESS TO LOCKED GATES CONTACT PARKS VIC ON 131963
+=&gt; TRAVEL SOUTH-EAST 450M ON ROAD TO CAR PARK ENTRANCE
+=&gt; THEN NORTH-EAST 90M DOWN RAMP
+=&gt; THEN EAST 45M TO ASHPALT FOOTPATH
+=&gt; THEN NORTH-EAST 40M TO RIVER AND JETTY</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CTT-Ei-nCU" firstAttribute="height" secondItem="EN3-1n-Efp" secondAttribute="height" id="8YL-Cd-9Gy"/>
+                                    <constraint firstItem="CTT-Ei-nCU" firstAttribute="centerY" secondItem="EN3-1n-Efp" secondAttribute="centerY" id="TaC-a7-Wax"/>
+                                    <constraint firstItem="CTT-Ei-nCU" firstAttribute="centerX" secondItem="EN3-1n-Efp" secondAttribute="centerX" id="j78-Nc-djm"/>
+                                    <constraint firstAttribute="height" constant="160" id="tTm-6P-iZF"/>
+                                    <constraint firstItem="CTT-Ei-nCU" firstAttribute="width" secondItem="EN3-1n-Efp" secondAttribute="width" id="xyZ-Jt-4RC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -81,21 +94,22 @@
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="cl8-8s-lOO" secondAttribute="bottom" id="GWX-Oi-jLs"/>
                             <constraint firstItem="7fy-Vt-VJZ" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="HGw-jX-Dov"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="7fy-Vt-VJZ" secondAttribute="trailing" id="Ik6-mZ-60g"/>
-                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="CTT-Ei-nCU" secondAttribute="trailing" constant="20" id="JKV-qP-NLD"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="WBa-hS-F4K" secondAttribute="trailing" constant="20" id="N78-n8-9sA"/>
+                            <constraint firstItem="EN3-1n-Efp" firstAttribute="leading" secondItem="WBa-hS-F4K" secondAttribute="leading" id="ZDi-eX-TTf"/>
                             <constraint firstItem="WBa-hS-F4K" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="24" id="ZPF-ea-lRB"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="cl8-8s-lOO" secondAttribute="trailing" id="clU-4V-CgC"/>
-                            <constraint firstItem="cl8-8s-lOO" firstAttribute="top" secondItem="CTT-Ei-nCU" secondAttribute="bottom" constant="17" id="fze-cN-cZ8"/>
+                            <constraint firstItem="EN3-1n-Efp" firstAttribute="trailing" secondItem="WBa-hS-F4K" secondAttribute="trailing" id="g4i-cg-hoP"/>
                             <constraint firstItem="cl8-8s-lOO" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="h3Q-Dt-hxo"/>
                             <constraint firstItem="7fy-Vt-VJZ" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="hdp-Du-NqI"/>
+                            <constraint firstItem="cl8-8s-lOO" firstAttribute="top" secondItem="EN3-1n-Efp" secondAttribute="bottom" constant="19" id="j46-RE-u9K"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="7fy-Vt-VJZ" secondAttribute="bottom" id="oQD-aR-1Ph"/>
-                            <constraint firstItem="CTT-Ei-nCU" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="zAc-FX-t8Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Marker" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="directionsContainerView" destination="EN3-1n-Efp" id="tUZ-Fu-ir6"/>
                         <outlet property="directionsView" destination="CTT-Ei-nCU" id="epy-He-o6X"/>
                         <outlet property="mapView" destination="7fy-Vt-VJZ" id="kTf-Mm-VVl"/>
                         <outlet property="showDirectionsButton" destination="xhU-BD-Iah" id="CCa-kX-DkH"/>
