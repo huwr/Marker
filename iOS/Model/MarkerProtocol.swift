@@ -26,6 +26,13 @@ protocol MarkerProtocol: MKAnnotation {
 
     //eg MANNINGHAM CITY
     var environmentName: String { get }
+
+    var aRoad: String { get }
+    var bRoad: String { get }
+
+    //eg TURNTABLE CAR PARK
+    var markerAddress: String { get }
+    var hasMarkerAddress: Bool { get }
 }
 
 extension MarkerProtocol {
@@ -44,4 +51,6 @@ extension MarkerProtocol {
             .replacingOccurrences(of: "   ", with: " ")
             .replacingOccurrences(of: "  ", with: " ")
     }
+
+    var hasMarkerAddress: Bool { return markerAddress.trimmingCharacters(in: CharacterSet.whitespaces) != "" }
 }

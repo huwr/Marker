@@ -37,4 +37,13 @@ class Marker: Object, MarkerProtocol {
     var directions: String {
         return dirText
     }
+
+    var aRoad: String {
+        return [aRoadName, aRoadType, aRoadSuffix].joined(separator: " ")
+    }
+
+    var bRoad: String {
+        return [bRoadName, bRoadType, bRoadSuffix].joined(separator: " ")
+    }
+
 }

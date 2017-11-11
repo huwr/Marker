@@ -101,6 +101,8 @@ class MarkerViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+
+        
         let navigateButton = UIBarButtonItem(title: "Open in Maps…", style: .plain, target: self, action: #selector(navigatePressed(_:)))
         navigationItem.rightBarButtonItem = navigateButton
         navigationItem.rightBarButtonItem?.isEnabled = false
