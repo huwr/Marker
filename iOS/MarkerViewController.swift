@@ -18,8 +18,13 @@ class MarkerViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView?
     @IBOutlet weak var mapStyle: UISegmentedControl?
 
+    var sharer: MarkerSharer?
+
     var marker: MarkerProtocol? { didSet {
         configureView()
+
+        sharer = MarkerSharer(viewController: self)
+        sharer?.marker = marker
     } }
 
     // MARK: Directions
@@ -60,13 +65,6 @@ class MarkerViewController: UIViewController {
         mapView?.addAnnotation(marker)
     }
 
-    @objc func navigatePressed(_ sender: Any) {
-        guard let marker = marker else { return }
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: marker.coordinate))
-        mapItem.name = marker.markerId
-        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
-    }
-
     let regionRadius: CLLocationDistance = 1000
 
     // MARK: Map Style
@@ -101,9 +99,8 @@ class MarkerViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
-        
-        let navigateButton = UIBarButtonItem(title: "Open in Maps…", style: .plain, target: self, action: #selector(navigatePressed(_:)))
+        super.viewDidLoad()
+        let navigateButton = UIBarButtonItem(title: "Open in Maps…", style: .plain, target: self, action: #selector(actionPressed(_:)))
         navigationItem.rightBarButtonItem = navigateButton
         navigationItem.rightBarButtonItem?.isEnabled = false
         mapView?.isHidden = true
@@ -118,5 +115,11 @@ class MarkerViewController: UIViewController {
             let destinationVC = destinationNC.viewControllers.first as? MoreInfoViewController {
             destinationVC.marker = marker
         }
+    }
+
+    // MARK: Action
+
+    @objc func actionPressed(_ sender: Any) {
+        sharer?.presentMapsDialog()
     }
 }
