@@ -34,6 +34,7 @@ extension MarkerProtocol {
     }
 
     var localizedDirections: String {
+        //The directions text in the dataset is gross… wish I could do more than this
         let title = "EMERG MRKR \(markerId): "
 
         return directions

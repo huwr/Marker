@@ -99,7 +99,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="msH-Dt-HMI" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="24" id="5yd-ed-04c"/>
                             <constraint firstItem="WBa-hS-F4K" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="DTt-ni-0FK"/>
@@ -236,7 +236,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
