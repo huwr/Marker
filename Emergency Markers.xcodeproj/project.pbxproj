@@ -16,6 +16,7 @@
 		5534F7201FB6A9E100CDAF71 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534F71F1FB6A9E000CDAF71 /* Media.xcassets */; };
 		5534F7221FB6C75B00CDAF71 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* DirectionsViewController.swift */; };
 		5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */; };
+		5534F7261FB6E8C200CDAF71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5534F7251FB6E8C100CDAF71 /* README.md */; };
 		55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
 		55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */; };
 		55E6FBA41FB16DDF00FADC4E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */; };
@@ -35,6 +36,7 @@
 		5534F71F1FB6A9E000CDAF71 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../../../Desktop/Media.xcassets; sourceTree = "<group>"; };
 		5534F7211FB6C75B00CDAF71 /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerSharer.swift; sourceTree = "<group>"; };
+		5534F7251FB6E8C100CDAF71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocol.swift; sourceTree = "<group>"; };
 		55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		55E6FB951FB16DDF00FADC4E = {
 			isa = PBXGroup;
 			children = (
+				5534F7251FB6E8C100CDAF71 /* README.md */,
 				5534F7191FB6A76500CDAF71 /* Art */,
 				5509D0421FB17138002C9577 /* Marker.csv */,
 				55E6FBA01FB16DDF00FADC4E /* iOS */,
@@ -209,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5534F7261FB6E8C200CDAF71 /* README.md in Resources */,
 				55E6FBAE1FB16DDF00FADC4E /* LaunchScreen.storyboard in Resources */,
 				5534F71C1FB6A79E00CDAF71 /* icon.png in Resources */,
 				552E57BD1FB18AF00053F125 /* markers.realm in Resources */,
