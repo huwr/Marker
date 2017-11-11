@@ -86,7 +86,7 @@ class MasterViewController: UITableViewController {
         let marker = markers[indexPath.row]
 
         cell.textLabel?.text = marker.markerId
-        cell.detailTextLabel?.text = marker.locality.localizedCapitalized
+        cell.detailTextLabel?.text = marker.locationDescription
         return cell
     }
 }

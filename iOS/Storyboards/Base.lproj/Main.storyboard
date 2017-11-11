@@ -5,15 +5,9 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Menlo.ttc">
-            <string>Menlo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Search-->
         <scene sceneID="pY4-Hu-kfo">
@@ -24,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -45,48 +39,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="419" width="374" height="297"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fy-Vt-VJZ">
-                                <rect key="frame" x="0.0" y="64" width="414" height="318"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LLL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Men-ob-BPU">
-                                <rect key="frame" x="193" y="389.66666666666669" width="28" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap 'Search' to begin…" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBa-hS-F4K">
+                                <rect key="frame" x="20" y="88" width="374" height="31.666666666666671"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fy-Vt-VJZ">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            </mapView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CTT-Ei-nCU" userLabel="Directions">
+                                <rect key="frame" x="20" y="511" width="374" height="164"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="GrX-Ko-0oh"/>
+                                </constraints>
+                                <string key="text">EMERG MRKR PIP600: NEAREST I/S VAN NESS AV &amp; WARRS RD
+=&gt; ACCESS TO LOCKED GATES CONTACT PARKS VIC ON 131963
+=&gt; TRAVEL SOUTH-EAST 450M ON ROAD TO CAR PARK ENTRANCE
+=&gt; THEN NORTH-EAST 90M DOWN RAMP
+=&gt; THEN EAST 45M TO ASHPALT FOOTPATH
+=&gt; THEN NORTH-EAST 40M TO RIVER AND JETTY</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cl8-8s-lOO">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" title="Show Directions" id="xhU-BD-Iah">
+                                        <connections>
+                                            <action selector="showDirectionsTapped:" destination="JEX-9P-axG" id="4VB-KZ-0qr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Men-ob-BPU" firstAttribute="centerY" secondItem="VUw-jc-0yf" secondAttribute="centerY" id="4XB-Jt-MbF"/>
-                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="20" id="FON-Cz-HUV"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="Men-ob-BPU" secondAttribute="bottom" constant="8.3333333333333144" id="H4a-Zr-hR0"/>
-                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="7fy-Vt-VJZ" secondAttribute="trailing" id="Oh2-il-dz4"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="7fy-Vt-VJZ" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="WfQ-G7-fuv"/>
-                            <constraint firstItem="Men-ob-BPU" firstAttribute="centerX" secondItem="VUw-jc-0yf" secondAttribute="centerX" id="Z3T-yC-PNH"/>
-                            <constraint firstItem="Men-ob-BPU" firstAttribute="top" secondItem="7fy-Vt-VJZ" secondAttribute="bottom" constant="7.5" id="aYu-Jd-H7l"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
-                            <constraint firstAttribute="topMargin" secondItem="7fy-Vt-VJZ" secondAttribute="top" id="vjC-so-4IW"/>
+                            <constraint firstItem="WBa-hS-F4K" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="DTt-ni-0FK"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="cl8-8s-lOO" secondAttribute="bottom" id="GWX-Oi-jLs"/>
+                            <constraint firstItem="7fy-Vt-VJZ" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="HGw-jX-Dov"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="7fy-Vt-VJZ" secondAttribute="trailing" id="Ik6-mZ-60g"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="CTT-Ei-nCU" secondAttribute="trailing" constant="20" id="JKV-qP-NLD"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="WBa-hS-F4K" secondAttribute="trailing" constant="20" id="N78-n8-9sA"/>
+                            <constraint firstItem="WBa-hS-F4K" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="24" id="ZPF-ea-lRB"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="cl8-8s-lOO" secondAttribute="trailing" id="clU-4V-CgC"/>
+                            <constraint firstItem="cl8-8s-lOO" firstAttribute="top" secondItem="CTT-Ei-nCU" secondAttribute="bottom" constant="17" id="fze-cN-cZ8"/>
+                            <constraint firstItem="cl8-8s-lOO" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="h3Q-Dt-hxo"/>
+                            <constraint firstItem="7fy-Vt-VJZ" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="hdp-Du-NqI"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="7fy-Vt-VJZ" secondAttribute="bottom" id="oQD-aR-1Ph"/>
+                            <constraint firstItem="CTT-Ei-nCU" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="zAc-FX-t8Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Marker" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="1vG-l4-Nd7"/>
+                        <outlet property="directionsView" destination="CTT-Ei-nCU" id="epy-He-o6X"/>
                         <outlet property="mapView" destination="7fy-Vt-VJZ" id="kTf-Mm-VVl"/>
+                        <outlet property="showDirectionsButton" destination="xhU-BD-Iah" id="CCa-kX-DkH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708.69565217391312" y="128.80434782608697"/>
+            <point key="canvasLocation" x="704.34782608695662" y="124.72826086956523"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -172,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -190,7 +207,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

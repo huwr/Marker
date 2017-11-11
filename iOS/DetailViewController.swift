@@ -11,32 +11,52 @@ import MapKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var directionsView: UITextView?
+    @IBOutlet weak var showDirectionsButton: UIBarButtonItem?
+    @IBOutlet weak var mapView: MKMapView?
 
-    var marker: MarkerProtocol? {
-        didSet {
+    var marker: MarkerProtocol? { didSet {
             configureView()
-        }
+    } }
+
+    // MARK: Directions
+
+    var directionsHidden: Bool = true { didSet {
+        showDirectionsButton?.title = directionsHidden ? "Show Directions" : "Hide Directions"
+        directionsView?.isHidden = directionsHidden
+    } }
+
+    @IBAction func showDirectionsTapped(_ sender: UIBarButtonItem) {
+        directionsHidden = !directionsHidden
     }
 
-    func configureView() {
-        guard let marker = marker else { return }
+    // MARK: Map
 
-        detailDescriptionLabel?.text = marker.description
+    var mapHidden: Bool = true { didSet {
+        navigationItem.rightBarButtonItem?.isEnabled = !mapHidden
+        showDirectionsButton?.isEnabled = !mapHidden
+        mapView?.isHidden = mapHidden
+    } }
+
+    func configureMapView() {
+        guard let marker = marker else {
+            mapHidden = true
+            return
+        }
+        mapHidden = false
+
+        directionsView?.text = marker.localizedDirections
 
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(marker.coordinate, regionRadius, regionRadius)
         mapView?.setRegion(coordinateRegion, animated: true)
 
         mapView?.addAnnotation(marker)
-
-        navigationItem.largeTitleDisplayMode = .never
     }
 
-    @objc func directionsPressed(_ sender: Any) {
-        guard let targetLocation = marker?.coordinate else { return }
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: targetLocation))
-        mapItem.name = marker?.markerId
+    @objc func navigatePressed(_ sender: Any) {
+        guard let marker = marker else { return }
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: marker.coordinate))
+        mapItem.name = marker.markerId
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
     }
 
@@ -44,13 +64,19 @@ class DetailViewController: UIViewController {
 
     // MARK: View lifecycle
 
+    func configureView() {
+        navigationItem.largeTitleDisplayMode = .never
+        configureMapView()
+    }
+
     override func viewDidLoad() {
-        let directionsButton = UIBarButtonItem(title: "Directions", style: .plain, target: self, action: #selector(directionsPressed(_:)))
-        navigationItem.rightBarButtonItem = directionsButton
+        let navigateButton = UIBarButtonItem(title: "Open in Maps…", style: .plain, target: self, action: #selector(navigatePressed(_:)))
+        navigationItem.rightBarButtonItem = navigateButton
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        mapView?.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         configureView()
     }
-
 }

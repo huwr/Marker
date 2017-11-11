@@ -34,7 +34,7 @@ class Marker: Object, MarkerProtocol {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 
-    override var description: String {
+    var directions: String {
         return dirText
     }
 }

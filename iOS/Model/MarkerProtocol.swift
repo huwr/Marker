@@ -12,9 +12,33 @@ import MapKit
 
 protocol MarkerProtocol: MKAnnotation {
     var coordinate: CLLocationCoordinate2D { get }
-    var description: String { get }
 
+    // CAD Directions
+    var directions: String { get }
+
+    var localizedDirections: String { get }
+
+    // Marker ID like KCT040
     var markerId: String { get }
+
+    //eg DONCASTER EAST
     var locality: String { get }
+
+    //eg MANNINGHAM CITY
     var environmentName: String { get }
+}
+
+extension MarkerProtocol {
+    var locationDescription: String {
+        return "\(environmentName.localizedCapitalized), \(locality.localizedCapitalized)"
+    }
+
+    var localizedDirections: String {
+        let title = "EMERG MRKR \(markerId): "
+
+        return directions
+            .replacingOccurrences(of: "=>", with: "\t→")
+            .replacingOccurrences(of: title, with: "")
+            .replacingOccurrences(of: "NEAREST I/S", with: "NEAREST INTERSECTION:")
+    }
 }
