@@ -11,10 +11,15 @@ import UIKit
 fileprivate typealias MarkerAttribute = (name: String, value: CustomStringConvertible)
 
 class MoreInfoViewController: UITableViewController {
+    var sharer: MarkerSharer?
+
     var marker: MarkerProtocol? { didSet {
         if let marker = marker {
             markerAttributes = attributes(marker)
         } else { markerAttributes = nil }
+
+        sharer = MarkerSharer(viewController: self)
+        sharer?.marker = marker
     }}
 
     fileprivate var markerAttributes: [MarkerAttribute]?
@@ -70,6 +75,12 @@ class MoreInfoViewController: UITableViewController {
         if segue.identifier == "showDirections", let destinationVC = segue.destination as? DirectionsViewController {
             destinationVC.marker = marker
         }
+    }
+
+    // MARL: Sharing
+
+    @IBAction func sharePressed(_ sender: UIBarButtonItem) {
+        sharer?.presentShareDialog()
     }
 
     // MARK: Marker manipulating…

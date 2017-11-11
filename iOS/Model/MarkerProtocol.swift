@@ -15,7 +15,6 @@ protocol MarkerProtocol: MKAnnotation {
 
     // CAD Directions
     var directions: String { get }
-
     var localizedDirections: String { get }
 
     // Marker ID like KCT040
@@ -53,4 +52,24 @@ extension MarkerProtocol {
     }
 
     var hasMarkerAddress: Bool { return markerAddress.trimmingCharacters(in: CharacterSet.whitespaces) != "" }
+
+    var sharingDescription: String {
+        return """
+        Emergency Marker \(markerId)
+        ======
+
+        ID: \(markerId)
+        Locality: \(locality.localizedCapitalized)
+        Environment: \(environmentName.localizedCapitalized)
+        Latitude: \(coordinate.latitude)
+        Longitude: \(coordinate.longitude)
+        A Road: \(aRoad.localizedCapitalized)
+        B Road: \(bRoad.localizedCapitalized)
+        Address: \(markerAddress.localizedCapitalized)
+
+        Directions:
+        ------
+        \(localizedDirections)
+        """
+    }
 }
