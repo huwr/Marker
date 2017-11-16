@@ -106,7 +106,7 @@ extension SearchViewController: UISearchResultsUpdating {
         if searchText.isEmpty {
             markers = database.all()
         } else {
-            markers = database.with(markerId: searchText.uppercased())
+            markers = database.with(keyword: searchText.uppercased())
         }
         tableView.reloadData()
     }

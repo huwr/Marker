@@ -55,4 +55,8 @@ struct MarkerDB {
     func with(markerId: String) -> [MarkerProtocol] {
         return Array(markers.filter("markerId CONTAINS '\(markerId)'"))
     }
+
+    func with(keyword: String) -> [MarkerProtocol] {
+        return Array(markers.filter("markerId CONTAINS '\(keyword)' OR environmentName CONTAINS '\(keyword)' OR locality CONTAINS '\(keyword)'"))
+    }
 }
