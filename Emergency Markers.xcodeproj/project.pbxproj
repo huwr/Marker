@@ -13,11 +13,11 @@
 		552E57BD1FB18AF00053F125 /* markers.realm in Resources */ = {isa = PBXBuildFile; fileRef = 552E57BC1FB18AF00053F125 /* markers.realm */; };
 		5534F7181FB6A3EF00CDAF71 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7171FB6A3EF00CDAF71 /* MoreInfoViewController.swift */; };
 		5534F71C1FB6A79E00CDAF71 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5534F71B1FB6A79E00CDAF71 /* icon.png */; };
-		5534F7201FB6A9E100CDAF71 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534F71F1FB6A9E000CDAF71 /* Media.xcassets */; };
 		5534F7221FB6C75B00CDAF71 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* DirectionsViewController.swift */; };
 		5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */; };
 		5534F7261FB6E8C200CDAF71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5534F7251FB6E8C100CDAF71 /* README.md */; };
 		55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
+		55B4A4C31FBE4E220088EDF2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B4A4C21FBE4E220088EDF2 /* Media.xcassets */; };
 		55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */; };
 		55E6FBA41FB16DDF00FADC4E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */; };
 		55E6FBA61FB16DDF00FADC4E /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA51FB16DDF00FADC4E /* MarkerViewController.swift */; };
@@ -33,11 +33,11 @@
 		5534F7171FB6A3EF00CDAF71 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		5534F71A1FB6A77300CDAF71 /* icon.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.acorn; sourceTree = "<group>"; };
 		5534F71B1FB6A79E00CDAF71 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		5534F71F1FB6A9E000CDAF71 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../../../Desktop/Media.xcassets; sourceTree = "<group>"; };
 		5534F7211FB6C75B00CDAF71 /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerSharer.swift; sourceTree = "<group>"; };
 		5534F7251FB6E8C100CDAF71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocol.swift; sourceTree = "<group>"; };
+		55B4A4C21FBE4E220088EDF2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +115,7 @@
 		55E6FBA01FB16DDF00FADC4E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				55B4A4C21FBE4E220088EDF2 /* Media.xcassets */,
 				55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */,
 				5509D03C1FB170A0002C9577 /* Storyboards */,
 				5509D03D1FB170CC002C9577 /* Model */,
@@ -123,7 +124,6 @@
 				5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */,
 				5534F7171FB6A3EF00CDAF71 /* MoreInfoViewController.swift */,
 				5534F7211FB6C75B00CDAF71 /* DirectionsViewController.swift */,
-				5534F71F1FB6A9E000CDAF71 /* Media.xcassets */,
 				55E6FBAF1FB16DDF00FADC4E /* Info.plist */,
 			);
 			path = iOS;
@@ -216,7 +216,7 @@
 				55E6FBAE1FB16DDF00FADC4E /* LaunchScreen.storyboard in Resources */,
 				5534F71C1FB6A79E00CDAF71 /* icon.png in Resources */,
 				552E57BD1FB18AF00053F125 /* markers.realm in Resources */,
-				5534F7201FB6A9E100CDAF71 /* Media.xcassets in Resources */,
+				55B4A4C31FBE4E220088EDF2 /* Media.xcassets in Resources */,
 				55E6FBA91FB16DDF00FADC4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
