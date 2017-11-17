@@ -16,9 +16,7 @@ class DirectionsViewController: UIViewController {
     @IBOutlet weak var directionsView: UITextView?
 
     func configureView() {
-        if let marker = marker {
-            directionsView?.text = marker.localizedDirections
-        }
+        directionsView?.text = marker?.localizedDirections
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		436BC1A74ACC79C6CCE93654 /* Pods_Emergency_Markers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D4BFF461E336646B9E6637 /* Pods_Emergency_Markers.framework */; };
+		550573A31FBE8BD000A371FA /* DirectionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */; };
+		550573AC1FBE8F0200A371FA /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
+		550573AE1FBE90EB00A371FA /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* DirectionsViewController.swift */; };
+		550573B01FBE914A00A371FA /* MockMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573AF1FBE914A00A371FA /* MockMarker.swift */; };
 		5509D03F1FB170DF002C9577 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D03E1FB170DF002C9577 /* Marker.swift */; };
 		5509D0451FB175F7002C9577 /* MarkerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D0441FB175F7002C9577 /* MarkerDB.swift */; };
 		552E57BD1FB18AF00053F125 /* markers.realm in Resources */ = {isa = PBXBuildFile; fileRef = 552E57BC1FB18AF00053F125 /* markers.realm */; };
@@ -23,9 +27,26 @@
 		55E6FBA61FB16DDF00FADC4E /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA51FB16DDF00FADC4E /* MarkerViewController.swift */; };
 		55E6FBA91FB16DDF00FADC4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E6FBA71FB16DDF00FADC4E /* Main.storyboard */; };
 		55E6FBAE1FB16DDF00FADC4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E6FBAC1FB16DDF00FADC4E /* LaunchScreen.storyboard */; };
+		D59158BC1B8DE6D54B6BE946 /* Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF97E2790562DB94663F12D /* Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		550573A51FBE8BD000A371FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55E6FB961FB16DDF00FADC4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55E6FB9D1FB16DDF00FADC4E;
+			remoteInfo = "Emergency Markers";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1B836E3766AF4061F218B0A2 /* Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		24B446B17E7EB1AECC81AC5C /* Pods-Emergency Markers-Test-Emergency Markers Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emergency Markers-Test-Emergency Markers Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests.release.xcconfig"; sourceTree = "<group>"; };
+		550573A01FBE8BD000A371FA /* Emergency Markers Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Emergency Markers Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewControllerTests.swift; sourceTree = "<group>"; };
+		550573A41FBE8BD000A371FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		550573AF1FBE914A00A371FA /* MockMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMarker.swift; sourceTree = "<group>"; };
 		5509D03E1FB170DF002C9577 /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		5509D0421FB17138002C9577 /* Marker.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Marker.csv; sourceTree = "<group>"; };
 		5509D0441FB175F7002C9577 /* MarkerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDB.swift; sourceTree = "<group>"; };
@@ -48,9 +69,18 @@
 		59F509BF2AC4B99B4D1571D5 /* Pods-Emergency Markers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emergency Markers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emergency Markers/Pods-Emergency Markers.release.xcconfig"; sourceTree = "<group>"; };
 		66D4BFF461E336646B9E6637 /* Pods_Emergency_Markers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emergency_Markers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A571ACAD040CB8C259A2A8A2 /* Pods-Emergency Markers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emergency Markers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emergency Markers/Pods-Emergency Markers.debug.xcconfig"; sourceTree = "<group>"; };
+		DFF97E2790562DB94663F12D /* Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5505739D1FBE8BD000A371FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59158BC1B8DE6D54B6BE946 /* Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55E6FB9B1FB16DDF00FADC4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,6 +92,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		550573A11FBE8BD000A371FA /* Emergency Markers Tests */ = {
+			isa = PBXGroup;
+			children = (
+				550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */,
+				550573AA1FBE8DE400A371FA /* Model */,
+				550573A41FBE8BD000A371FA /* Info.plist */,
+			);
+			path = "Emergency Markers Tests";
+			sourceTree = "<group>";
+		};
+		550573AA1FBE8DE400A371FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				550573AF1FBE914A00A371FA /* MockMarker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5509D03C1FB170A0002C9577 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +146,7 @@
 				5534F7191FB6A76500CDAF71 /* Art */,
 				5509D0421FB17138002C9577 /* Marker.csv */,
 				55E6FBA01FB16DDF00FADC4E /* iOS */,
+				550573A11FBE8BD000A371FA /* Emergency Markers Tests */,
 				55E6FB9F1FB16DDF00FADC4E /* Products */,
 				E3251EBB896E1B4ADC370C93 /* Pods */,
 				C05DBDC4349925292A82C1B0 /* Frameworks */,
@@ -108,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */,
+				550573A01FBE8BD000A371FA /* Emergency Markers Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				66D4BFF461E336646B9E6637 /* Pods_Emergency_Markers.framework */,
+				DFF97E2790562DB94663F12D /* Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,6 +193,8 @@
 			children = (
 				A571ACAD040CB8C259A2A8A2 /* Pods-Emergency Markers.debug.xcconfig */,
 				59F509BF2AC4B99B4D1571D5 /* Pods-Emergency Markers.release.xcconfig */,
+				1B836E3766AF4061F218B0A2 /* Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig */,
+				24B446B17E7EB1AECC81AC5C /* Pods-Emergency Markers-Test-Emergency Markers Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -149,6 +202,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5505739F1FBE8BD000A371FA /* Emergency Markers Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550573A91FBE8BD000A371FA /* Build configuration list for PBXNativeTarget "Emergency Markers Tests" */;
+			buildPhases = (
+				0A1CA47058EEF3FCB9E1B5E4 /* [CP] Check Pods Manifest.lock */,
+				5505739C1FBE8BD000A371FA /* Sources */,
+				5505739D1FBE8BD000A371FA /* Frameworks */,
+				5505739E1FBE8BD000A371FA /* Resources */,
+				3362186F192FB946CFE1A6BA /* [CP] Embed Pods Frameworks */,
+				1C2CE4BCD5E9D2BAEE611C23 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				550573A61FBE8BD000A371FA /* PBXTargetDependency */,
+			);
+			name = "Emergency Markers Tests";
+			productName = "Emergency Markers Tests";
+			productReference = 550573A01FBE8BD000A371FA /* Emergency Markers Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		55E6FB9D1FB16DDF00FADC4E /* Emergency Markers */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55E6FBB21FB16DDF00FADC4E /* Build configuration list for PBXNativeTarget "Emergency Markers" */;
@@ -183,6 +257,11 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Huw Rowlands";
 				TargetAttributes = {
+					5505739F1FBE8BD000A371FA = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 55E6FB9D1FB16DDF00FADC4E;
+					};
 					55E6FB9D1FB16DDF00FADC4E = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -203,11 +282,19 @@
 			projectRoot = "";
 			targets = (
 				55E6FB9D1FB16DDF00FADC4E /* Emergency Markers */,
+				5505739F1FBE8BD000A371FA /* Emergency Markers Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5505739E1FBE8BD000A371FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55E6FB9C1FB16DDF00FADC4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +311,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A1CA47058EEF3FCB9E1B5E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Emergency Markers-Test-Emergency Markers Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0F0B33EC3B1E3C7B598BCD54 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,6 +345,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C2CE4BCD5E9D2BAEE611C23 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3362186F192FB946CFE1A6BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5509D0431FB17195002C9577 /* ShellScript */ = {
@@ -293,6 +437,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5505739C1FBE8BD000A371FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550573A31FBE8BD000A371FA /* DirectionsViewControllerTests.swift in Sources */,
+				550573AE1FBE90EB00A371FA /* DirectionsViewController.swift in Sources */,
+				550573AC1FBE8F0200A371FA /* MarkerProtocol.swift in Sources */,
+				550573B01FBE914A00A371FA /* MockMarker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55E6FB9A1FB16DDF00FADC4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,6 +465,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		550573A61FBE8BD000A371FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55E6FB9D1FB16DDF00FADC4E /* Emergency Markers */;
+			targetProxy = 550573A51FBE8BD000A371FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		55E6FBA71FB16DDF00FADC4E /* Main.storyboard */ = {
@@ -331,6 +494,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		550573A71FBE8BD000A371FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B836E3766AF4061F218B0A2 /* Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NU7Z2275VX;
+				INFOPLIST_FILE = "Emergency Markers Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.huwr.Emergency-Markers-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emergency Markers.app/Emergency Markers";
+			};
+			name = Debug;
+		};
+		550573A81FBE8BD000A371FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24B446B17E7EB1AECC81AC5C /* Pods-Emergency Markers-Test-Emergency Markers Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NU7Z2275VX;
+				INFOPLIST_FILE = "Emergency Markers Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.huwr.Emergency-Markers-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emergency Markers.app/Emergency Markers";
+			};
+			name = Release;
+		};
 		55E6FBB01FB16DDF00FADC4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -477,6 +676,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		550573A91FBE8BD000A371FA /* Build configuration list for PBXNativeTarget "Emergency Markers Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550573A71FBE8BD000A371FA /* Debug */,
+				550573A81FBE8BD000A371FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		55E6FB991FB16DDF00FADC4E /* Build configuration list for PBXProject "Emergency Markers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
