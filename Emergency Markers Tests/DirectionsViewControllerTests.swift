@@ -14,12 +14,10 @@ class DirectionsViewControllerTests: QuickSpec {
         var subject: DirectionsViewController?
         var marker: MarkerProtocol?
 
-        let textView =  UITextView()
-
         describe("setting the marker") {
             beforeEach {
                 subject = DirectionsViewController()
-                subject?.directionsView = textView
+                subject?.directionsView = UITextView()
                 marker = MockMarker()
             }
 

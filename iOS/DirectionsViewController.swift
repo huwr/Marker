@@ -13,7 +13,7 @@ class DirectionsViewController: UIViewController {
         configureView()
     }}
 
-    @IBOutlet weak var directionsView: UITextView?
+    @IBOutlet var directionsView: UITextView?
 
     func configureView() {
         directionsView?.text = marker?.localizedDirections
