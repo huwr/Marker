@@ -15,12 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        // APPLE TEMPLATE CODE:
         // swiftlint:disable force_cast
         let splitViewController = window!.rootViewController as! UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         // swiftlint:enable force_cast
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
+        // END APPLE TEMPLATE CODE
+
+        if let searchVC = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? SearchViewController {
+            searchVC.database = MarkerDB()
+        }
 
         UIApplication.shared.statusBarStyle = .lightContent
         return true

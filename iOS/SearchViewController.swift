@@ -10,21 +10,17 @@ import UIKit
 
 class SearchViewController: UITableViewController {
 
-    var detailViewController: MarkerViewController?
-    var database = MarkerDB()
-    lazy var markers = database.all()
+    var database: MarkerDB? {
+        didSet {
+            self.markers = database?.all()
+        }
+    }
+    var markers: [MarkerProtocol]?
 
     let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            // swiftlint:disable force_cast
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? MarkerViewController
-            // swiftlint:enable force_cast
-        }
 
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes =
@@ -56,17 +52,15 @@ class SearchViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                // swiftlint:disable force_cast
-                let object = markers[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! MarkerViewController
-                // swiftlint:enable force_cast
-                controller.marker = object
-                controller.navigationItem.title = object.markerId
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
+        guard segue.identifier == "showDetail",
+            let indexPath = tableView.indexPathForSelectedRow,
+            let object = markers?[indexPath.row] else { return }
+
+        if let destinationVC = (segue.destination as? UINavigationController)?.topViewController as? MarkerViewController {
+            destinationVC.marker = object
+            destinationVC.navigationItem.title = object.markerId
+            destinationVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+            destinationVC.navigationItem.leftItemsSupplementBackButton = true
         }
     }
 
@@ -77,16 +71,17 @@ class SearchViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return markers.count
+        return markers?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let marker = markers[indexPath.row]
+        let marker = markers?[indexPath.row]
 
-        cell.textLabel?.text = marker.markerId
-        cell.detailTextLabel?.text = marker.locationDescription
+        cell.textLabel?.text = marker?.markerId
+        cell.detailTextLabel?.text = marker?.locationDescription
+
         return cell
     }
 }
@@ -104,9 +99,9 @@ extension SearchViewController: UISearchResultsUpdating {
 
     func filterContentForSearchText(_ searchText: String) {
         if searchText.isEmpty {
-            markers = database.all()
+            markers = database?.all()
         } else {
-            markers = database.with(keyword: searchText.uppercased())
+            markers = database?.with(keyword: searchText.uppercased())
         }
         tableView.reloadData()
     }
