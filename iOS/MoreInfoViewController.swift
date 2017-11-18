@@ -10,6 +10,8 @@ import UIKit
 
 fileprivate typealias MarkerAttribute = (name: String, value: CustomStringConvertible)
 
+let SEGUESHOWDIRECTIONS = "showDirections"
+
 class MoreInfoViewController: UITableViewController {
     var sharer: MarkerSharer?
 
@@ -72,7 +74,7 @@ class MoreInfoViewController: UITableViewController {
     // MARK: Segueing
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDirections", let destinationVC = segue.destination as? DirectionsViewController {
+        if segue.identifier == SEGUESHOWDIRECTIONS, let destinationVC = segue.destination as? DirectionsViewController {
             destinationVC.marker = marker
         }
     }

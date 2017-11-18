@@ -11,12 +11,12 @@ import MapKit
 
 class MarkerViewController: UIViewController {
 
-    @IBOutlet weak var directionsContainerView: UIView?
-    @IBOutlet weak var directionsView: UITextView?
-    @IBOutlet weak var showDirectionsButton: UIBarButtonItem?
-    @IBOutlet weak var showMoreInfoButton: UIBarButtonItem?
-    @IBOutlet weak var mapView: MKMapView?
-    @IBOutlet weak var mapStyle: UISegmentedControl?
+    @IBOutlet var directionsContainerView: UIView?
+    @IBOutlet var directionsView: UITextView?
+    @IBOutlet var showDirectionsButton: UIBarButtonItem?
+    @IBOutlet var showMoreInfoButton: UIBarButtonItem?
+    @IBOutlet var mapView: MKMapView?
+    @IBOutlet var mapStyle: UISegmentedControl?
 
     var sharer: MarkerSharer?
 
