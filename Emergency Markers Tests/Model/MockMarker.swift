@@ -26,4 +26,9 @@ class MockMarker: NSObject, MarkerProtocol {
     var bRoad: String = "Smaller Road"
 
     var markerAddress: String = "123 Test Street"
+
+    convenience init(markerId: String) {
+        self.init()
+        self.markerId = markerId
+    }
 }

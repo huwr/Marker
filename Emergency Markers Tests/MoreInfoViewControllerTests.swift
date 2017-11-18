@@ -29,9 +29,22 @@ class MoreInfoViewControllerTests: QuickSpec {
                 subject?.prepare(for: segue, sender: nil)
 
                 expect(desintationVC.marker).toNot(beNil())
-                expect(desintationVC.marker?.markerId).to(equal(marker?.markerId))
+                expect(desintationVC.marker?.isEqual(marker)).to(beTrue())
+            }
+        }
+
+        describe("view lifecycle") {
+            let mockMarkerId = "MOCK MARKER"
+            beforeEach {
+                subject = MoreInfoViewController()
+                marker = MockMarker.init(markerId: mockMarkerId)
+                subject?.marker = marker
             }
 
+            it("takes the marker's title when appearing") {
+                subject?.viewWillAppear(false)
+                expect(subject?.title).to(equal(mockMarkerId))
+            }
         }
     }
 }

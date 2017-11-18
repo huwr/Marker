@@ -10,11 +10,9 @@ import UIKit
 
 class SearchViewController: UITableViewController {
 
-    var database: MarkerDB? {
-        didSet {
-            self.markers = database?.all()
-        }
-    }
+    var database: MarkerDB? { didSet {
+        self.markers = database?.all()
+    }}
     var markers: [MarkerProtocol]?
 
     let searchController = UISearchController(searchResultsController: nil)
