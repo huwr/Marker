@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import CoreLocation
 
 private func migrateRealmSeeds() {
     let defaultRealmPath = Realm.Configuration.defaultConfiguration.fileURL!
@@ -58,5 +59,9 @@ struct MarkerDB {
 
     func with(keyword: String) -> [MarkerProtocol] {
         return Array(markers.filter("markerId CONTAINS '\(keyword)' OR environmentName CONTAINS '\(keyword)' OR locality CONTAINS '\(keyword)'"))
+    }
+
+    func closestTo(location: CLLocation) -> MarkerProtocol? {
+        return all().min { first, second in first.distance(from: location) ?? 0 < second.distance(from: location) ?? 0 }
     }
 }
