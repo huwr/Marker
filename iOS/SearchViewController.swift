@@ -33,8 +33,9 @@ class SearchViewController: UITableViewController {
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
 
         navigationItem.searchController = searchController
-        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
 
+        definesPresentationContext = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
