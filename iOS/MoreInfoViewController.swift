@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 fileprivate typealias MarkerAttribute = (name: String, value: CustomStringConvertible)
 
@@ -16,15 +17,16 @@ class MoreInfoViewController: UITableViewController {
     var sharer: MarkerSharer?
 
     var marker: MarkerProtocol? { didSet {
-        if let marker = marker {
-            markerAttributes = attributes(marker)
-        } else { markerAttributes = nil }
-
         sharer = MarkerSharer(viewController: self)
         sharer?.marker = marker
     }}
 
-    fileprivate var markerAttributes: [MarkerAttribute]?
+    var location: CLLocation?
+
+    fileprivate var markerAttributes: [MarkerAttribute]? {
+        guard let marker = marker else { return nil }
+        return attributes(marker)
+    }
 
     @IBAction func dismiss() {
         self.navigationController?.dismiss(animated: true, completion: nil)
@@ -101,6 +103,10 @@ class MoreInfoViewController: UITableViewController {
 
         if marker.hasMarkerAddress {
             attributes.append(("Address", "\(marker.markerAddress.localizedCapitalized)"))
+        }
+
+        if let location = location, let distance = marker.distance(from: location) {
+            attributes.append(("Distance", "\(distance.display()) metres"))
         }
 
         return attributes

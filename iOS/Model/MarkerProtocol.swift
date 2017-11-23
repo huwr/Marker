@@ -35,6 +35,15 @@ protocol MarkerProtocol: MKAnnotation {
 }
 
 extension MarkerProtocol {
+    var location: CLLocation {
+        return CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    }
+
+    func distance(from origin: CLLocation?) -> Double? {
+        guard let origin = origin else { return nil }
+        return origin.distance(from: location)
+    }
+
     var locationDescription: String {
         return "\(environmentName.localizedCapitalized), \(locality.localizedCapitalized)"
     }

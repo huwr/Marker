@@ -27,6 +27,8 @@ class MarkerViewController: UIViewController {
         sharer?.marker = marker
     } }
 
+    var location: CLLocation?
+
     // MARK: Directions
 
     var directionsHidden: Bool = true { didSet {
@@ -112,8 +114,9 @@ class MarkerViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMoreInfo", let destinationNC = segue.destination as? UINavigationController,
-            let destinationVC = destinationNC.viewControllers.first as? MoreInfoViewController {
-            destinationVC.marker = marker
+            let moreInfoVC = destinationNC.viewControllers.first as? MoreInfoViewController {
+            moreInfoVC.location = location
+            moreInfoVC.marker = marker
         }
     }
 

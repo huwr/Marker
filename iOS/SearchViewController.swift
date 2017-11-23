@@ -8,7 +8,16 @@
 
 import UIKit
 
+import CoreLocation
+
+//default location
+private let melbourne = CLLocation(latitude: -37.8633, longitude: 144.9802)
+
 class SearchViewController: UITableViewController {
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation? { didSet {
+        tableView.reloadData()
+    }}
 
     var database: MarkerDB? { didSet {
         self.markers = database?.all()
@@ -36,6 +45,8 @@ class SearchViewController: UITableViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
 
         definesPresentationContext = true
+
+        self.startUpdatingLocation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,11 +66,12 @@ class SearchViewController: UITableViewController {
             let indexPath = tableView.indexPathForSelectedRow,
             let object = markers?[indexPath.row] else { return }
 
-        if let destinationVC = (segue.destination as? UINavigationController)?.topViewController as? MarkerViewController {
-            destinationVC.marker = object
-            destinationVC.navigationItem.title = object.markerId
-            destinationVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-            destinationVC.navigationItem.leftItemsSupplementBackButton = true
+        if let markerVC = (segue.destination as? UINavigationController)?.topViewController as? MarkerViewController {
+            markerVC.marker = object
+            markerVC.location = currentLocation
+            markerVC.navigationItem.title = object.markerId
+            markerVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+            markerVC.navigationItem.leftItemsSupplementBackButton = true
         }
     }
 
@@ -76,17 +88,19 @@ class SearchViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let marker = markers?[indexPath.row]
+        if let cell = cell as? SearchTableViewCell,
+            let marker = markers?[indexPath.row] {
 
-        cell.textLabel?.text = marker?.markerId
-        cell.detailTextLabel?.text = marker?.locationDescription
+            cell.title = "\(marker.markerId)"
+            cell.detail = marker.locationDescription
+            cell.distance = marker.distance(from: currentLocation)
+        }
 
         return cell
     }
 }
 
 extension SearchViewController: UISearchResultsUpdating {
-
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
@@ -103,5 +117,27 @@ extension SearchViewController: UISearchResultsUpdating {
             markers = database?.with(keyword: searchText.uppercased())
         }
         tableView.reloadData()
+    }
+}
+
+extension SearchViewController: CLLocationManagerDelegate {
+    func startUpdatingLocation() {
+        locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.distanceFilter = 20
+            locationManager.startUpdatingLocation()
+
+            print("start updating location…")
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Location updated!")
+        if let lastLocation = locations.last {
+            self.currentLocation = lastLocation
+        }
     }
 }

@@ -6,3 +6,12 @@ Emergency Markers are dotted throughout Victoria. These markers help the emergen
 For more about emergency markers, please see ESTA's own website: https://www.esta.vic.gov.au/emergency-markers
 
 To get the dataset yourself, please see: http://data-esta000.opendata.arcgis.com/datasets/df294d0463b44efd85f5e66f90825451_0
+
+
+TODO
+---
+
+* Show distance in list
+* Allow Details to be copy/pasted
+* Allow open in Google maps
+
