@@ -59,18 +59,42 @@ class MoreInfoViewController: UITableViewController {
         case 0:
             return cellForAttribute(
                 cell: tableView.dequeueReusableCell(withIdentifier: "attributeCell", for: indexPath),
-                attributes: self.markerAttributes,
+                attributes: self.markerAttributes?[indexPath.row],
                 index: indexPath.row)
         default:
             return tableView.dequeueReusableCell(withIdentifier: "instructionsCell", for: indexPath)
         }
     }
 
-    private func cellForAttribute(cell: UITableViewCell, attributes: [MarkerAttribute]?, index: Int) -> UITableViewCell {
-        guard let attributes = attributes else { return cell }
-        cell.textLabel?.text = attributes[index].name
-        cell.detailTextLabel?.text = attributes[index].value.description
+    private func cellForAttribute(cell: UITableViewCell, attributes: MarkerAttribute?, index: Int) -> UITableViewCell {
+        guard let attributes = attributes, let copyableCell = cell as? CopyableTableViewCell else { return cell }
+        copyableCell.title = attributes.name
+        copyableCell.detail = attributes.value.description
         return cell
+    }
+
+    // MARK: Copying!
+
+    override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section == 0
+    }
+
+    override func tableView(_ tableView: UITableView, canPerformAction action: Selector,
+                            forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return indexPath.section == 0 && action == #selector(copy(_:))
+    }
+
+    override func tableView(_ tableView: UITableView, performAction action: Selector,
+                            forRowAt indexPath: IndexPath, withSender sender: Any?) {
+
+        guard action == #selector(copy(_:)),
+            indexPath.section == 0 else {
+                return
+        }
+
+        if let value = self.markerAttributes?[indexPath.row].value {
+            UIPasteboard.general.string = "\(value)"
+        }
     }
 
     // MARK: Segueing
