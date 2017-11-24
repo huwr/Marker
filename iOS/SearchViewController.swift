@@ -21,6 +21,15 @@ class SearchViewController: UITableViewController {
     }}
     var markers: [MarkerProtocol]?
 
+    private func marker(for row: Int) -> MarkerProtocol? {
+        guard searchBarIsEmpty, let currentLocation = currentLocation else { return markers?[row] }
+
+        if row == 0 {
+            return database?.closestTo(location: currentLocation)
+        }
+        return markers?[row - 1]
+    }
+
     let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
@@ -51,17 +60,12 @@ class SearchViewController: UITableViewController {
         super.viewWillAppear(animated)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showDetail",
             let indexPath = tableView.indexPathForSelectedRow,
-            let object = markers?[indexPath.row] else { return }
+            let object = marker(for: indexPath.row) else { return }
 
         if let markerVC = (segue.destination as? UINavigationController)?.topViewController as? MarkerViewController {
             markerVC.marker = object
@@ -80,15 +84,6 @@ class SearchViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return markers?.count ?? 0
-    }
-
-    private func marker(for row: Int) -> MarkerProtocol? {
-        guard searchBarIsEmpty, let currentLocation = currentLocation else { return markers?[row] }
-
-        if row == 0 {
-            return database?.closestTo(location: currentLocation)
-        }
-        return markers?[row - 1]
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
