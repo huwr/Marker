@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DirectionsViewController: UIViewController {
+class InstructionsViewController: UIViewController {
     var marker: MarkerProtocol? { didSet {
         configureView()
     }}
@@ -16,7 +16,7 @@ class DirectionsViewController: UIViewController {
     @IBOutlet var directionsView: UITextView?
 
     func configureView() {
-        directionsView?.text = marker?.localizedDirections
+        directionsView?.text = marker?.localizedInstructions
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -23,7 +23,7 @@ class MoreInfoViewControllerTests: QuickSpec {
             }
 
             it("passes the marker to the next vc") {
-                let desintationVC = DirectionsViewController()
+                let desintationVC = InstructionsViewController()
                 let segue = UIStoryboardSegue(identifier: SEGUESHOWDIRECTIONS, source: subject!, destination: desintationVC)
 
                 subject?.prepare(for: segue, sender: nil)

@@ -13,7 +13,7 @@ class MarkerViewController: UIViewController {
 
     @IBOutlet var directionsContainerView: UIView?
     @IBOutlet var directionsView: UITextView?
-    @IBOutlet var showDirectionsButton: UIBarButtonItem?
+    @IBOutlet var showInstructionsButton: UIBarButtonItem?
     @IBOutlet var showMoreInfoButton: UIBarButtonItem?
     @IBOutlet var mapView: MKMapView?
     @IBOutlet var mapStyle: UISegmentedControl?
@@ -32,7 +32,7 @@ class MarkerViewController: UIViewController {
     // MARK: Directions
 
     var directionsHidden: Bool = true { didSet {
-        showDirectionsButton?.title = directionsHidden ? "Show Directions" : "Hide Directions"
+        showInstructionsButton?.title = directionsHidden ? "Show Instructions" : "Hide Instructions"
         directionsView?.flashScrollIndicators()
         directionsView?.setContentOffset(.zero, animated: true)
         directionsContainerView?.isHidden = directionsHidden
@@ -46,7 +46,7 @@ class MarkerViewController: UIViewController {
 
     var mapHidden: Bool = true { didSet {
         navigationItem.rightBarButtonItem?.isEnabled = !mapHidden
-        showDirectionsButton?.isEnabled = !mapHidden
+        showInstructionsButton?.isEnabled = !mapHidden
         showMoreInfoButton?.isEnabled = !mapHidden
         mapStyle?.isHidden = mapHidden
         mapView?.isHidden = mapHidden
@@ -59,7 +59,7 @@ class MarkerViewController: UIViewController {
         }
         mapHidden = false
 
-        directionsView?.text = marker.localizedDirections
+        directionsView?.text = marker.localizedInstructions
 
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(marker.coordinate, regionRadius, regionRadius)
         mapView?.setRegion(coordinateRegion, animated: true)

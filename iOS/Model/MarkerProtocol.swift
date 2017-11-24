@@ -15,7 +15,7 @@ protocol MarkerProtocol: MKAnnotation {
 
     // CAD Directions
     var directions: String { get }
-    var localizedDirections: String { get }
+    var localizedInstructions: String { get }
 
     // Marker ID like KCT040
     var markerId: String { get }
@@ -48,7 +48,7 @@ extension MarkerProtocol {
         return "\(environmentName.localizedCapitalized), \(locality.localizedCapitalized)"
     }
 
-    var localizedDirections: String {
+    var localizedInstructions: String {
         //The directions text in the dataset is gross… wish I could do more than this
         let title = "EMERG MRKR \(markerId): "
 
@@ -63,9 +63,9 @@ extension MarkerProtocol {
     var hasMarkerAddress: Bool { return markerAddress.trimmingCharacters(in: CharacterSet.whitespaces) != "" }
 
     var sharingDescription: String {
-        return """
+        var desc = """
         Emergency Marker \(markerId)
-        ======
+        =======================
 
         ID: \(markerId)
         Locality: \(locality.localizedCapitalized)
@@ -74,11 +74,21 @@ extension MarkerProtocol {
         Longitude: \(coordinate.longitude)
         A Road: \(aRoad.localizedCapitalized)
         B Road: \(bRoad.localizedCapitalized)
-        Address: \(markerAddress.localizedCapitalized)
-
-        Directions:
-        ------
-        \(localizedDirections)
         """
+        if hasMarkerAddress {
+            desc += """
+            Address: \(markerAddress.localizedCapitalized)
+            """
+        }
+
+        desc += """
+
+
+        Instructions
+        ------------
+        \(localizedInstructions)
+        """
+
+        return desc
     }
 }

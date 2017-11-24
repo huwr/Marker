@@ -9,21 +9,21 @@
 import Quick
 import Nimble
 
-class DirectionsViewControllerTests: QuickSpec {
+class InstructionsViewControllerTests: QuickSpec {
     override func spec() {
-        var subject: DirectionsViewController?
+        var subject: InstructionsViewController?
         var marker: MarkerProtocol?
 
         describe("setting the marker") {
             beforeEach {
-                subject = DirectionsViewController()
+                subject = InstructionsViewController()
                 subject?.directionsView = UITextView()
                 marker = MockMarker()
             }
 
             it("sets the localised directions when setting marker") {
                 subject?.marker = marker
-                expect(subject?.directionsView?.text).to(equal(marker?.localizedDirections))
+                expect(subject?.directionsView?.text).to(equal(marker?.localizedInstructions))
             }
         }
     }

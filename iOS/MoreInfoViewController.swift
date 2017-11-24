@@ -62,7 +62,7 @@ class MoreInfoViewController: UITableViewController {
                 attributes: self.markerAttributes,
                 index: indexPath.row)
         default:
-            return tableView.dequeueReusableCell(withIdentifier: "directionsCell", for: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: "instructionsCell", for: indexPath)
         }
     }
 
@@ -76,8 +76,8 @@ class MoreInfoViewController: UITableViewController {
     // MARK: Segueing
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SEGUESHOWDIRECTIONS, let destinationVC = segue.destination as? DirectionsViewController {
-            destinationVC.marker = marker
+        if segue.identifier == SEGUESHOWDIRECTIONS, let instructionsVC = segue.destination as? InstructionsViewController {
+            instructionsVC.marker = marker
         }
     }
 
