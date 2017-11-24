@@ -26,6 +26,7 @@
 		5534F7221FB6C75B00CDAF71 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */; };
 		5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */; };
 		5534F7261FB6E8C200CDAF71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5534F7251FB6E8C100CDAF71 /* README.md */; };
+		559E22621FC8CCBB007EAA5C /* MarkerProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22611FC8CCBB007EAA5C /* MarkerProtocolTests.swift */; };
 		55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
 		55B4A4C31FBE4E220088EDF2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B4A4C21FBE4E220088EDF2 /* Media.xcassets */; };
 		55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerSharer.swift; sourceTree = "<group>"; };
 		5534F7251FB6E8C100CDAF71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		559E22611FC8CCBB007EAA5C /* MarkerProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocolTests.swift; sourceTree = "<group>"; };
 		55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocol.swift; sourceTree = "<group>"; };
 		55B4A4C21FBE4E220088EDF2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 		550573A11FBE8BD000A371FA /* Emergency Markers Tests */ = {
 			isa = PBXGroup;
 			children = (
+				559E22611FC8CCBB007EAA5C /* MarkerProtocolTests.swift */,
 				550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */,
 				5530B6631FBFDB78009CE61C /* MoreInfoViewControllerTests.swift */,
 				550573AA1FBE8DE400A371FA /* Model */,
@@ -466,6 +469,7 @@
 				550573AC1FBE8F0200A371FA /* MarkerProtocol.swift in Sources */,
 				5530B6661FBFDC23009CE61C /* MarkerSharer.swift in Sources */,
 				550FFDCF1FC6BA8800313946 /* Double+Rounding.swift in Sources */,
+				559E22621FC8CCBB007EAA5C /* MarkerProtocolTests.swift in Sources */,
 				5530B6651FBFDBA5009CE61C /* MoreInfoViewController.swift in Sources */,
 				550573B01FBE914A00A371FA /* MockMarker.swift in Sources */,
 				5530B6641FBFDB78009CE61C /* MoreInfoViewControllerTests.swift in Sources */,

@@ -10,9 +10,6 @@ import UIKit
 
 import CoreLocation
 
-//default location
-private let melbourne = CLLocation(latitude: -37.8633, longitude: 144.9802)
-
 class SearchViewController: UITableViewController {
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation? { didSet {

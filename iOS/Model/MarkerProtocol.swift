@@ -37,6 +37,7 @@ protocol MarkerProtocol: MKAnnotation {
 extension MarkerProtocol {
     var location: CLLocation {
         return CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
+
     }
 
     func distance(from origin: CLLocation?) -> Double? {
