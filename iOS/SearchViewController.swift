@@ -85,11 +85,20 @@ class SearchViewController: UITableViewController {
         return markers?.count ?? 0
     }
 
+    private func marker(for row: Int) -> MarkerProtocol? {
+        guard searchBarIsEmpty, let currentLocation = currentLocation else { return markers?[row] }
+
+        if row == 0 {
+            return database?.closestTo(location: currentLocation)
+        }
+        return markers?[row - 1]
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         if let cell = cell as? SearchTableViewCell,
-            let marker = markers?[indexPath.row] {
+            let marker = marker(for: indexPath.row) {
 
             cell.title = "\(marker.markerId)"
             cell.detail = marker.locationDescription
@@ -106,11 +115,10 @@ class SearchViewController: UITableViewController {
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+        filterContentForSearchText(searchController.searchBar.text ?? "")
     }
 
-    func searchBarIsEmpty() -> Bool {
-        // Returns true if the text is empty or nil
+    var searchBarIsEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
 
