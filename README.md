@@ -11,6 +11,4 @@ To get the dataset yourself, please see: http://data-esta000.opendata.arcgis.com
 TODO
 ---
 
-* Allow Details to be copy/pasted
-* Allow open in Google maps
-
+* 'favourite' markers
