@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import CoreLocation
 
 class SearchViewController: UITableViewController {
