@@ -130,9 +130,20 @@ class MoreInfoViewController: UITableViewController {
         }
 
         if let location = location, let distance = marker.distance(from: location) {
-            attributes.append(("Distance", "\(distance.display()) metres"))
+            attributes.append(("Distance", "\(self.formatDistance(distance)) metres"))
         }
 
         return attributes
+    }
+
+    private let numberFormatter = NumberFormatter()
+
+    private func formatDistance(_ metres: Double) -> String {
+        let number = NSNumber(value: metres.roundTo(0))
+
+        numberFormatter.groupingSeparator = "\u{2008}"
+        numberFormatter.numberStyle = .decimal
+
+        return numberFormatter.string(from: number) ?? ""
     }
 }
