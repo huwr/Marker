@@ -9,6 +9,11 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
+    @IBOutlet var currentLocationIcon: UIImageView!
+    @IBOutlet var detailLabel: UILabel?
+    @IBOutlet var titleLabel: UILabel?
+    @IBOutlet var distanceLabel: UILabel?
+
     var title: String = "" { didSet {
         titleLabel?.text = title
     } }
@@ -26,7 +31,7 @@ class SearchTableViewCell: UITableViewCell {
         }
     } }
 
-    @IBOutlet var detailLabel: UILabel?
-    @IBOutlet var titleLabel: UILabel?
-    @IBOutlet var distanceLabel: UILabel?
+    var isClosest: Bool = false { didSet {
+        currentLocationIcon.isHidden = !isClosest
+    } }
 }

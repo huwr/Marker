@@ -20,8 +20,10 @@ class SearchViewController: UITableViewController {
     }}
     var markers: [MarkerProtocol]?
 
+    var showingClosest: Bool { return searchBarIsEmpty && currentLocation != nil }
+
     private func marker(for row: Int) -> MarkerProtocol? {
-        guard searchBarIsEmpty, let currentLocation = currentLocation else { return markers?[row] }
+        guard showingClosest, let currentLocation = currentLocation else { return markers?[row] }
 
         if row == 0 {
             return database?.closestTo(location: currentLocation)
@@ -91,6 +93,7 @@ class SearchViewController: UITableViewController {
         if let cell = cell as? SearchTableViewCell,
             let marker = marker(for: indexPath.row) {
 
+            cell.isClosest = showingClosest && indexPath.row == 0
             cell.title = "\(marker.markerId)"
             cell.detail = marker.locationDescription
             cell.distance = marker.distance(from: currentLocation)
