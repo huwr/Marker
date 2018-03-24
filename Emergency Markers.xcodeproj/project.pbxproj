@@ -29,8 +29,18 @@
 		559E22621FC8CCBB007EAA5C /* MarkerProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22611FC8CCBB007EAA5C /* MarkerProtocolTests.swift */; };
 		559E22651FC8D469007EAA5C /* CopyableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22631FC8D1DE007EAA5C /* CopyableTableViewCell.swift */; };
 		559E22661FC8DB8B007EAA5C /* CopyableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22631FC8D1DE007EAA5C /* CopyableTableViewCell.swift */; };
+		55A1E626206623AC00C26FA6 /* UTMFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A1E624206623AC00C26FA6 /* UTMFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55A1E629206623AC00C26FA6 /* UTMFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A1E622206623AC00C26FA6 /* UTMFramework.framework */; };
+		55A1E62A206623AC00C26FA6 /* UTMFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55A1E622206623AC00C26FA6 /* UTMFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55A1E6342066240800C26FA6 /* UTMCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1E62F2066240800C26FA6 /* UTMCoordinate.swift */; };
+		55A1E6352066240800C26FA6 /* CLLocation+UTMCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1E6302066240800C26FA6 /* CLLocation+UTMCoordinate.swift */; };
+		55A1E6362066240800C26FA6 /* String+padLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1E6312066240800C26FA6 /* String+padLeft.swift */; };
+		55A1E6372066240800C26FA6 /* TMCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1E6322066240800C26FA6 /* TMCoordinate.swift */; };
+		55A1E6382066240800C26FA6 /* CLLocationCoordinate2D+UTMCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1E6332066240800C26FA6 /* CLLocationCoordinate2D+UTMCoordinate.swift */; };
+		55A1E639206627FF00C26FA6 /* MarkerProtocol+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */; };
 		55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
 		55B4A4C31FBE4E220088EDF2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B4A4C21FBE4E220088EDF2 /* Media.xcassets */; };
+		55C74F6720661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */; };
 		55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */; };
 		55E6FBA41FB16DDF00FADC4E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */; };
 		55E6FBA61FB16DDF00FADC4E /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA51FB16DDF00FADC4E /* MarkerViewController.swift */; };
@@ -47,7 +57,28 @@
 			remoteGlobalIDString = 55E6FB9D1FB16DDF00FADC4E;
 			remoteInfo = "Emergency Markers";
 		};
+		55A1E627206623AC00C26FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55E6FB961FB16DDF00FADC4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55A1E621206623AC00C26FA6;
+			remoteInfo = UTMFramework;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55A1E5DC206620DB00C26FA6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				55A1E62A206623AC00C26FA6 /* UTMFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1B836E3766AF4061F218B0A2 /* Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,8 +102,17 @@
 		5534F7251FB6E8C100CDAF71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		559E22611FC8CCBB007EAA5C /* MarkerProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocolTests.swift; sourceTree = "<group>"; };
 		559E22631FC8D1DE007EAA5C /* CopyableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableTableViewCell.swift; sourceTree = "<group>"; };
+		55A1E622206623AC00C26FA6 /* UTMFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UTMFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A1E624206623AC00C26FA6 /* UTMFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTMFramework.h; sourceTree = "<group>"; };
+		55A1E625206623AC00C26FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A1E62F2066240800C26FA6 /* UTMCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTMCoordinate.swift; sourceTree = "<group>"; };
+		55A1E6302066240800C26FA6 /* CLLocation+UTMCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+UTMCoordinate.swift"; sourceTree = "<group>"; };
+		55A1E6312066240800C26FA6 /* String+padLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+padLeft.swift"; sourceTree = "<group>"; };
+		55A1E6322066240800C26FA6 /* TMCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMCoordinate.swift; sourceTree = "<group>"; };
+		55A1E6332066240800C26FA6 /* CLLocationCoordinate2D+UTMCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+UTMCoordinate.swift"; sourceTree = "<group>"; };
 		55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocol.swift; sourceTree = "<group>"; };
 		55B4A4C21FBE4E220088EDF2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkerProtocol+MarkerAttribute.swift"; sourceTree = "<group>"; };
 		55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -95,10 +135,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55A1E61E206623AC00C26FA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55E6FB9B1FB16DDF00FADC4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A1E629206623AC00C26FA6 /* UTMFramework.framework in Frameworks */,
 				436BC1A74ACC79C6CCE93654 /* Pods_Emergency_Markers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +190,7 @@
 				5509D03E1FB170DF002C9577 /* Marker.swift */,
 				5509D0441FB175F7002C9577 /* MarkerDB.swift */,
 				55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */,
+				55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +213,28 @@
 			path = Art;
 			sourceTree = "<group>";
 		};
+		55A1E623206623AC00C26FA6 /* UTMFramework */ = {
+			isa = PBXGroup;
+			children = (
+				55A1E62E206623F900C26FA6 /* UTMConversion */,
+				55A1E624206623AC00C26FA6 /* UTMFramework.h */,
+				55A1E625206623AC00C26FA6 /* Info.plist */,
+			);
+			path = UTMFramework;
+			sourceTree = "<group>";
+		};
+		55A1E62E206623F900C26FA6 /* UTMConversion */ = {
+			isa = PBXGroup;
+			children = (
+				55A1E6302066240800C26FA6 /* CLLocation+UTMCoordinate.swift */,
+				55A1E6332066240800C26FA6 /* CLLocationCoordinate2D+UTMCoordinate.swift */,
+				55A1E6312066240800C26FA6 /* String+padLeft.swift */,
+				55A1E6322066240800C26FA6 /* TMCoordinate.swift */,
+				55A1E62F2066240800C26FA6 /* UTMCoordinate.swift */,
+			);
+			path = UTMConversion;
+			sourceTree = "<group>";
+		};
 		55E6FB951FB16DDF00FADC4E = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +243,7 @@
 				5509D0421FB17138002C9577 /* Marker.csv */,
 				55E6FBA01FB16DDF00FADC4E /* iOS */,
 				550573A11FBE8BD000A371FA /* Emergency Markers Tests */,
+				55A1E623206623AC00C26FA6 /* UTMFramework */,
 				55E6FB9F1FB16DDF00FADC4E /* Products */,
 				E3251EBB896E1B4ADC370C93 /* Pods */,
 				C05DBDC4349925292A82C1B0 /* Frameworks */,
@@ -183,6 +255,7 @@
 			children = (
 				55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */,
 				550573A01FBE8BD000A371FA /* Emergency Markers Tests.xctest */,
+				55A1E622206623AC00C26FA6 /* UTMFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,6 +301,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		55A1E61F206623AC00C26FA6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A1E626206623AC00C26FA6 /* UTMFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		5505739F1FBE8BD000A371FA /* Emergency Markers Tests */ = {
 			isa = PBXNativeTarget;
@@ -250,6 +334,24 @@
 			productReference = 550573A01FBE8BD000A371FA /* Emergency Markers Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		55A1E621206623AC00C26FA6 /* UTMFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55A1E62B206623AD00C26FA6 /* Build configuration list for PBXNativeTarget "UTMFramework" */;
+			buildPhases = (
+				55A1E61D206623AC00C26FA6 /* Sources */,
+				55A1E61E206623AC00C26FA6 /* Frameworks */,
+				55A1E61F206623AC00C26FA6 /* Headers */,
+				55A1E620206623AC00C26FA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UTMFramework;
+			productName = UTMFramework;
+			productReference = 55A1E622206623AC00C26FA6 /* UTMFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		55E6FB9D1FB16DDF00FADC4E /* Emergency Markers */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55E6FBB21FB16DDF00FADC4E /* Build configuration list for PBXNativeTarget "Emergency Markers" */;
@@ -261,10 +363,12 @@
 				55E6FB9C1FB16DDF00FADC4E /* Resources */,
 				80C6707B4B6EC9AC06B4E1A5 /* [CP] Embed Pods Frameworks */,
 				F21DB011D7B306C88C063535 /* [CP] Copy Pods Resources */,
+				55A1E5DC206620DB00C26FA6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				55A1E628206623AC00C26FA6 /* PBXTargetDependency */,
 			);
 			name = "Emergency Markers";
 			productName = "Emergency Markers";
@@ -280,7 +384,7 @@
 				KnownAssetTags = (
 					db,
 				);
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Huw Rowlands";
 				TargetAttributes = {
@@ -288,6 +392,11 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 55E6FB9D1FB16DDF00FADC4E;
+					};
+					55A1E621206623AC00C26FA6 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
 					};
 					55E6FB9D1FB16DDF00FADC4E = {
 						CreatedOnToolsVersion = 9.1;
@@ -310,12 +419,20 @@
 			targets = (
 				55E6FB9D1FB16DDF00FADC4E /* Emergency Markers */,
 				5505739F1FBE8BD000A371FA /* Emergency Markers Tests */,
+				55A1E621206623AC00C26FA6 /* UTMFramework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5505739E1FBE8BD000A371FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A1E620206623AC00C26FA6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -472,12 +589,25 @@
 				550573AE1FBE90EB00A371FA /* InstructionsViewController.swift in Sources */,
 				550573AC1FBE8F0200A371FA /* MarkerProtocol.swift in Sources */,
 				5530B6661FBFDC23009CE61C /* MarkerSharer.swift in Sources */,
+				55A1E639206627FF00C26FA6 /* MarkerProtocol+MarkerAttribute.swift in Sources */,
 				550FFDCF1FC6BA8800313946 /* Double+Rounding.swift in Sources */,
 				559E22621FC8CCBB007EAA5C /* MarkerProtocolTests.swift in Sources */,
 				559E22661FC8DB8B007EAA5C /* CopyableTableViewCell.swift in Sources */,
 				5530B6651FBFDBA5009CE61C /* MoreInfoViewController.swift in Sources */,
 				550573B01FBE914A00A371FA /* MockMarker.swift in Sources */,
 				5530B6641FBFDB78009CE61C /* MoreInfoViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A1E61D206623AC00C26FA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A1E6362066240800C26FA6 /* String+padLeft.swift in Sources */,
+				55A1E6352066240800C26FA6 /* CLLocation+UTMCoordinate.swift in Sources */,
+				55A1E6372066240800C26FA6 /* TMCoordinate.swift in Sources */,
+				55A1E6382066240800C26FA6 /* CLLocationCoordinate2D+UTMCoordinate.swift in Sources */,
+				55A1E6342066240800C26FA6 /* UTMCoordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +618,7 @@
 				55E6FBA61FB16DDF00FADC4E /* MarkerViewController.swift in Sources */,
 				5509D0451FB175F7002C9577 /* MarkerDB.swift in Sources */,
 				5509D03F1FB170DF002C9577 /* Marker.swift in Sources */,
+				55C74F6720661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift in Sources */,
 				5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */,
 				559E22651FC8D469007EAA5C /* CopyableTableViewCell.swift in Sources */,
 				5534F7181FB6A3EF00CDAF71 /* MoreInfoViewController.swift in Sources */,
@@ -507,6 +638,11 @@
 			isa = PBXTargetDependency;
 			target = 55E6FB9D1FB16DDF00FADC4E /* Emergency Markers */;
 			targetProxy = 550573A51FBE8BD000A371FA /* PBXContainerItemProxy */;
+		};
+		55A1E628206623AC00C26FA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55A1E621206623AC00C26FA6 /* UTMFramework */;
+			targetProxy = 55A1E627206623AC00C26FA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -563,6 +699,59 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emergency Markers.app/Emergency Markers";
+			};
+			name = Release;
+		};
+		55A1E62C206623AD00C26FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NU7Z2275VX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UTMFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.huwr.UTMFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		55A1E62D206623AD00C26FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NU7Z2275VX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UTMFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.huwr.UTMFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -677,6 +866,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A571ACAD040CB8C259A2A8A2 /* Pods-Emergency Markers.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NU7Z2275VX;
@@ -695,6 +885,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59F509BF2AC4B99B4D1571D5 /* Pods-Emergency Markers.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NU7Z2275VX;
@@ -717,6 +908,15 @@
 			buildConfigurations = (
 				550573A71FBE8BD000A371FA /* Debug */,
 				550573A81FBE8BD000A371FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55A1E62B206623AD00C26FA6 /* Build configuration list for PBXNativeTarget "UTMFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55A1E62C206623AD00C26FA6 /* Debug */,
+				55A1E62D206623AD00C26FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -115,7 +115,7 @@ class MarkerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMoreInfo", let destinationNC = segue.destination as? UINavigationController,
             let moreInfoVC = destinationNC.viewControllers.first as? MoreInfoViewController {
-            moreInfoVC.location = location
+            moreInfoVC.currentLocation = location
             moreInfoVC.marker = marker
         }
     }

@@ -50,6 +50,7 @@ EMERG MRKR TEST123: NEAREST I/S CORN HILL RD & MT BULLER RD
         describe("location") {
             let testLat = CLLocationDegrees.init(-37.8633)
             let testLong = CLLocationDegrees.init(144.9802)
+            let testUTM = "223074"
 
             beforeEach {
                 mockMarker.coordinate = CLLocationCoordinate2D(latitude: testLat, longitude: testLong)
@@ -58,6 +59,10 @@ EMERG MRKR TEST123: NEAREST I/S CORN HILL RD & MT BULLER RD
             it("gives it to you as a corelocation") {
                 expect(subject.location.coordinate.latitude).to(equal(testLat))
                 expect(subject.location.coordinate.longitude).to(equal(testLong))
+            }
+
+            it("gives it to you a UTM") {
+                expect(subject.location.coordinate.utmCoordinate().shortformUTM).to(equal(testUTM))
             }
         }
     }

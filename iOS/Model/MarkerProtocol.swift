@@ -37,7 +37,6 @@ protocol MarkerProtocol: MKAnnotation {
 extension MarkerProtocol {
     var location: CLLocation {
         return CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
-
     }
 
     func distance(from origin: CLLocation?) -> Double? {
@@ -62,34 +61,4 @@ extension MarkerProtocol {
     }
 
     var hasMarkerAddress: Bool { return markerAddress.trimmingCharacters(in: CharacterSet.whitespaces) != "" }
-
-    var sharingDescription: String {
-        var desc = """
-        Emergency Marker \(markerId)
-        =======================
-
-        ID: \(markerId)
-        Locality: \(locality.localizedCapitalized)
-        Environment: \(environmentName.localizedCapitalized)
-        Latitude: \(coordinate.latitude)
-        Longitude: \(coordinate.longitude)
-        A Road: \(aRoad.localizedCapitalized)
-        B Road: \(bRoad.localizedCapitalized)
-        """
-        if hasMarkerAddress {
-            desc += """
-            Address: \(markerAddress.localizedCapitalized)
-            """
-        }
-
-        desc += """
-
-
-        Instructions
-        ------------
-        \(localizedInstructions)
-        """
-
-        return desc
-    }
 }

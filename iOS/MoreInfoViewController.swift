@@ -9,9 +9,9 @@
 import UIKit
 import CoreLocation
 
-fileprivate typealias MarkerAttribute = (name: String, value: CustomStringConvertible)
-
 let SEGUESHOWDIRECTIONS = "showDirections"
+
+private let numberFormatter = NumberFormatter()
 
 class MoreInfoViewController: UITableViewController {
     var sharer: MarkerSharer?
@@ -21,11 +21,27 @@ class MoreInfoViewController: UITableViewController {
         sharer?.marker = marker
     }}
 
-    var location: CLLocation?
+    var currentLocation: CLLocation?
 
-    fileprivate var markerAttributes: [MarkerAttribute]? {
+    private lazy var markerAttributes: [MarkerAttribute]? = {
         guard let marker = marker else { return nil }
-        return attributes(marker)
+
+        var attributes = marker.attributes
+
+        if let location = currentLocation, let distance = marker.distance(from: location) {
+            attributes.append(("Distance", "\(self.formatDistance(distance)) metres"))
+        }
+
+        return attributes
+    }()
+
+    private func formatDistance(_ metres: Double) -> String {
+        let number = NSNumber(value: metres.roundTo(0))
+
+        numberFormatter.groupingSeparator = "\u{2008}"
+        numberFormatter.numberStyle = .decimal
+
+        return numberFormatter.string(from: number) ?? ""
     }
 
     @IBAction func dismiss() {
@@ -105,45 +121,10 @@ class MoreInfoViewController: UITableViewController {
         }
     }
 
-    // MARL: Sharing
+    // MARK: Sharing
 
     @IBAction func sharePressed(_ sender: UIBarButtonItem) {
         sharer?.presentShareDialog()
     }
 
-    // MARK: Marker manipulating…
-
-    //This should probably be elsewhere but meh
-    private func attributes(_ marker: MarkerProtocol) -> [MarkerAttribute] {
-        var attributes: [MarkerAttribute] = [
-            ("ID", marker.markerId),
-            ("Locality", marker.locality.localizedCapitalized),
-            ("Environment", marker.environmentName.localizedCapitalized),
-            ("Latitude", "\(marker.coordinate.latitude)"),
-            ("Longitude", "\(marker.coordinate.longitude)"),
-            ("A Road", "\(marker.aRoad.localizedCapitalized)"),
-            ("B Road", "\(marker.bRoad.localizedCapitalized)")
-        ]
-
-        if marker.hasMarkerAddress {
-            attributes.append(("Address", "\(marker.markerAddress.localizedCapitalized)"))
-        }
-
-        if let location = location, let distance = marker.distance(from: location) {
-            attributes.append(("Distance", "\(self.formatDistance(distance)) metres"))
-        }
-
-        return attributes
-    }
-
-    private let numberFormatter = NumberFormatter()
-
-    private func formatDistance(_ metres: Double) -> String {
-        let number = NSNumber(value: metres.roundTo(0))
-
-        numberFormatter.groupingSeparator = "\u{2008}"
-        numberFormatter.numberStyle = .decimal
-
-        return numberFormatter.string(from: number) ?? ""
-    }
 }
