@@ -25,7 +25,7 @@ struct MarkerSharer {
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
     }
 
-    func presentMapsDialog() {
+    func presentMapsDialog(_ sender: UIBarButtonItem) {
         guard let marker = marker else { return }
 
         let alert = UIAlertController(title: "Open in Maps app?", message: "Do you want to open the marker '\(marker.markerId)' inside a Maps app?", preferredStyle: .actionSheet)
@@ -35,6 +35,8 @@ struct MarkerSharer {
             alert.addAction(UIAlertAction(title: "Open in Google Maps", style: .default, handler: { _ in self.openInGoogleMaps() }))
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.popoverPresentationController?.barButtonItem = sender
 
         viewController?.present(alert, animated: true, completion: nil)
     }

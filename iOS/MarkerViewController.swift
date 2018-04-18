@@ -118,7 +118,7 @@ class MarkerViewController: UIViewController {
 
     // MARK: Action
 
-    @objc func actionPressed(_ sender: Any) {
-        sharer.presentMapsDialog()
+    @objc func actionPressed(_ sender: UIBarButtonItem) {
+        sharer.presentMapsDialog(sender)
     }
 }
