@@ -357,7 +357,7 @@
 			buildConfigurationList = 55E6FBB21FB16DDF00FADC4E /* Build configuration list for PBXNativeTarget "Emergency Markers" */;
 			buildPhases = (
 				0F0B33EC3B1E3C7B598BCD54 /* [CP] Check Pods Manifest.lock */,
-				5509D0431FB17195002C9577 /* ShellScript */,
+				5509D0431FB17195002C9577 /* Run SwiftLint */,
 				55E6FB9A1FB16DDF00FADC4E /* Sources */,
 				55E6FB9B1FB16DDF00FADC4E /* Frameworks */,
 				55E6FB9C1FB16DDF00FADC4E /* Resources */,
@@ -530,13 +530,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5509D0431FB17195002C9577 /* ShellScript */ = {
+		5509D0431FB17195002C9577 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

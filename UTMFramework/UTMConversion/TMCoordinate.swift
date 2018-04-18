@@ -40,6 +40,7 @@ func toRadians(_ degrees: Double) -> Double {
 /**
     Internal struct used to represent Transverse Mercator coordinates. This struct is used as an intermediate representation of the location, in order to convert between Universal Transverse Mercator (UTM) coordinates, and latitude and longitude.
  */
+//swiftlint:disable identifier_name
 struct TMCoordinate {
     let northing: Double
     let easting: Double
