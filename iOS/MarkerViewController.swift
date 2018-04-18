@@ -18,14 +18,13 @@ class MarkerViewController: UIViewController {
     @IBOutlet var mapView: MKMapView?
     @IBOutlet var mapStyle: UISegmentedControl?
 
-    var sharer: MarkerSharer?
+    var sharer: MarkerSharer {
+        var sharer = MarkerSharer(viewController: self)
+        sharer.marker = marker
+        return sharer
+    }
 
-    var marker: MarkerProtocol? { didSet {
-        configureView()
-
-        sharer = MarkerSharer(viewController: self)
-        sharer?.marker = marker
-    } }
+    var marker: MarkerProtocol?
 
     var location: CLLocation?
 
@@ -52,7 +51,7 @@ class MarkerViewController: UIViewController {
         mapView?.isHidden = mapHidden
     } }
 
-    func configureMapView() {
+    private func configureMapView() {
         guard let marker = marker else {
             mapHidden = true
             return
@@ -106,9 +105,6 @@ class MarkerViewController: UIViewController {
         navigationItem.rightBarButtonItem = navigateButton
         navigationItem.rightBarButtonItem?.isEnabled = false
         mapView?.isHidden = true
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         configureView()
     }
 
@@ -123,6 +119,6 @@ class MarkerViewController: UIViewController {
     // MARK: Action
 
     @objc func actionPressed(_ sender: Any) {
-        sharer?.presentMapsDialog()
+        sharer.presentMapsDialog()
     }
 }
