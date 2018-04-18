@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		436BC1A74ACC79C6CCE93654 /* Pods_Emergency_Markers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D4BFF461E336646B9E6637 /* Pods_Emergency_Markers.framework */; };
 		550573A31FBE8BD000A371FA /* DirectionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */; };
 		550573AC1FBE8F0200A371FA /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
 		550573AE1FBE90EB00A371FA /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */; };
@@ -41,6 +40,7 @@
 		55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
 		55B4A4C31FBE4E220088EDF2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B4A4C21FBE4E220088EDF2 /* Media.xcassets */; };
 		55C74F6720661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */; };
+		55D72EE6208744240078A8B0 /* Pods_Emergency_Markers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D72EE5208744240078A8B0 /* Pods_Emergency_Markers.framework */; };
 		55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */; };
 		55E6FBA41FB16DDF00FADC4E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */; };
 		55E6FBA61FB16DDF00FADC4E /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA51FB16DDF00FADC4E /* MarkerViewController.swift */; };
@@ -113,6 +113,7 @@
 		55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocol.swift; sourceTree = "<group>"; };
 		55B4A4C21FBE4E220088EDF2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkerProtocol+MarkerAttribute.swift"; sourceTree = "<group>"; };
+		55D72EE5208744240078A8B0 /* Pods_Emergency_Markers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Emergency_Markers.framework; path = "../../Library/Developer/Xcode/DerivedData/Emergency_Markers-awggqpyfmfdyyzcqutmfsmyztpfa/Build/Products/Debug-iphonesimulator/Pods_Emergency_Markers.framework"; sourceTree = "<group>"; };
 		55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A1E629206623AC00C26FA6 /* UTMFramework.framework in Frameworks */,
-				436BC1A74ACC79C6CCE93654 /* Pods_Emergency_Markers.framework in Frameworks */,
+				55D72EE6208744240078A8B0 /* Pods_Emergency_Markers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				66D4BFF461E336646B9E6637 /* Pods_Emergency_Markers.framework */,
+				55D72EE5208744240078A8B0 /* Pods_Emergency_Markers.framework */,
 				DFF97E2790562DB94663F12D /* Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework */,
 			);
 			name = Frameworks;
