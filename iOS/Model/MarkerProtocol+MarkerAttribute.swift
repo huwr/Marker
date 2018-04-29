@@ -20,7 +20,7 @@ extension MarkerProtocol {
             ("Environment", self.environmentName.localizedCapitalized),
             ("Latitude", "\(self.coordinate.latitude)"),
             ("Longitude", "\(self.coordinate.longitude)"),
-            ("6-Digit UTM", self.coordinate.utmCoordinate().shortformUTM),
+//            ("6-Digit UTM", self.coordinate.utmCoordinate().shortformUTM),
             ("A Road", self.aRoad.localizedCapitalized),
             ("B Road", self.bRoad.localizedCapitalized)
         ]
