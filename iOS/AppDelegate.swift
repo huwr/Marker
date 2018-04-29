@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             searchVC.database = MarkerDB()
         }
 
-        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 
