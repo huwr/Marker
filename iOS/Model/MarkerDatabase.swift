@@ -16,3 +16,9 @@ protocol MarkerDatabase {
     func with(keyword: String) -> [Marker]
     func closestTo(location: CLLocation) -> Marker?
 }
+
+extension MarkerDatabase {
+    func closestTo(location: CLLocation) -> Marker? {
+        return all().min { first, second in first.distance(from: location) ?? 0 < second.distance(from: location) ?? 0 }
+    }
+}

@@ -60,8 +60,4 @@ struct RealmMarkerDB: MarkerDatabase {
     func with(keyword: String) -> [Marker] {
         return Array(markers.filter("markerId CONTAINS '\(keyword)' OR environmentName CONTAINS '\(keyword)' OR locality CONTAINS '\(keyword)'"))
     }
-
-    func closestTo(location: CLLocation) -> Marker? {
-        return all().min { first, second in first.distance(from: location) ?? 0 < second.distance(from: location) ?? 0 }
-    }
 }
