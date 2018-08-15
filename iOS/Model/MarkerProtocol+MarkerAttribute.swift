@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreLocation
-import UTMFramework
 
 typealias MarkerAttribute = (name: String, value: CustomStringConvertible)
 
@@ -20,7 +19,6 @@ extension MarkerProtocol {
             ("Environment", self.environmentName.localizedCapitalized),
             ("Latitude", "\(self.coordinate.latitude)"),
             ("Longitude", "\(self.coordinate.longitude)"),
-//            ("6-Digit UTM", self.coordinate.utmCoordinate().shortformUTM),
             ("A Road", self.aRoad.localizedCapitalized),
             ("B Road", self.bRoad.localizedCapitalized)
         ]
