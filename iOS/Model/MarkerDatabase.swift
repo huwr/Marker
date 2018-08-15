@@ -12,7 +12,6 @@ import CoreLocation
 protocol MarkerDatabase {
     var count: Int { get }
     func all() -> [Marker]
-    func with(markerId: String) -> [Marker]
     func with(keyword: String) -> [Marker]
     func closestTo(location: CLLocation) -> Marker?
 }

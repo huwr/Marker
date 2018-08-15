@@ -63,7 +63,7 @@ class MarkerViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(marker.coordinate, regionRadius, regionRadius)
         mapView?.setRegion(coordinateRegion, animated: true)
 
-        mapView?.addAnnotation(marker)
+        mapView?.addAnnotation(marker.pointAnnotation)
     }
 
     let regionRadius: CLLocationDistance = 1000

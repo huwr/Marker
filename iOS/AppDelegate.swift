@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // END APPLE TEMPLATE CODE
 
         if let searchVC = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? SearchViewController {
-            searchVC.database = RealmMarkerDB()
+            searchVC.database = MarkerFileDatabase()
         }
 
         return true

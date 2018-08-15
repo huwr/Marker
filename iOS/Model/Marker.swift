@@ -10,31 +10,56 @@ import Foundation
 import CoreLocation
 import MapKit
 
-protocol Marker: MKAnnotation {
-    var coordinate: CLLocationCoordinate2D { get }
+struct Marker: Decodable {
+    var latitude: Double
+
+    var longitude: Double
 
     // CAD Directions
-    var directions: String { get }
-    var localizedInstructions: String { get }
+    var directions: String
 
     // Marker ID like KCT040
-    var markerId: String { get }
+    var markerId: String
 
     //eg DONCASTER EAST
-    var locality: String { get }
+    var locality: String
 
     //eg MANNINGHAM CITY
-    var environmentName: String { get }
+    var environmentName: String
 
-    var aRoad: String { get }
-    var bRoad: String { get }
+    var aRoadName: String
+    var aRoadType: String
+    var aRoadSuffix: String
+
+    var bRoadName: String
+    var bRoadType: String
+    var bRoadSuffix: String
 
     //eg TURNTABLE CAR PARK
-    var markerAddress: String { get }
-    var hasMarkerAddress: Bool { get }
+    var markerAddress: String
+
+    enum CodingKeys: String, CodingKey {
+        case latitude
+        case longitude
+        case directions = "dirText"
+        case markerId
+        case locality
+        case environmentName
+        case aRoadName
+        case aRoadType
+        case aRoadSuffix
+        case bRoadName
+        case bRoadType
+        case bRoadSuffix
+        case markerAddress
+    }
 }
 
 extension Marker {
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+
     var location: CLLocation {
         return CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
@@ -42,6 +67,14 @@ extension Marker {
     func distance(from origin: CLLocation?) -> Double? {
         guard let origin = origin else { return nil }
         return origin.distance(from: location)
+    }
+
+    var aRoad: String {
+        return [aRoadName, aRoadType, aRoadSuffix].joined(separator: " ")
+    }
+
+    var bRoad: String {
+        return [bRoadName, bRoadType, bRoadSuffix].joined(separator: " ")
     }
 
     var locationDescription: String {
@@ -61,4 +94,11 @@ extension Marker {
     }
 
     var hasMarkerAddress: Bool { return markerAddress.trimmingCharacters(in: CharacterSet.whitespaces) != "" }
+
+    var pointAnnotation: MKPointAnnotation {
+        let annoation = MKPointAnnotation()
+        annoation.coordinate = self.coordinate
+        annoation.title = self.markerId
+        return annoation
+    }
 }

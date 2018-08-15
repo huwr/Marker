@@ -12,5 +12,4 @@ TODO
 ---
 
 * 'favourite' markers
-* remove Realm
 * iOS 12
