@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 struct MarkerSharer {
-    var marker: MarkerProtocol?
+    var marker: Marker?
 
     weak var viewController: UIViewController?
 

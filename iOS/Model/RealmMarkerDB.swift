@@ -23,7 +23,7 @@ private func migrateRealmSeeds() {
     }
 }
 
-struct MarkerDB {
+struct RealmMarkerDB: MarkerDatabase {
     init() {
         migrateRealmSeeds()
 
@@ -34,14 +34,14 @@ struct MarkerDB {
             fatalError("\(error)")
         }
 
-        markers = realm.objects(Marker.self).sorted(byKeyPath: "markerId")
+        markers = realm.objects(RealmMarker.self).sorted(byKeyPath: "markerId")
         print("loaded markers \(markers.count)")
     }
 
     // MARK: Realm
     private let realm: Realm
 
-    private var markers: Results<Marker>
+    private var markers: Results<RealmMarker>
 
     // MARK: Public
 
@@ -49,19 +49,19 @@ struct MarkerDB {
         return markers.count
     }
 
-    func all() -> [MarkerProtocol] {
+    func all() -> [Marker] {
         return Array(markers)
     }
 
-    func with(markerId: String) -> [MarkerProtocol] {
+    func with(markerId: String) -> [Marker] {
         return Array(markers.filter("markerId CONTAINS '\(markerId)'"))
     }
 
-    func with(keyword: String) -> [MarkerProtocol] {
+    func with(keyword: String) -> [Marker] {
         return Array(markers.filter("markerId CONTAINS '\(keyword)' OR environmentName CONTAINS '\(keyword)' OR locality CONTAINS '\(keyword)'"))
     }
 
-    func closestTo(location: CLLocation) -> MarkerProtocol? {
+    func closestTo(location: CLLocation) -> Marker? {
         return all().min { first, second in first.distance(from: location) ?? 0 < second.distance(from: location) ?? 0 }
     }
 }

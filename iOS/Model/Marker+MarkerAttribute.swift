@@ -11,7 +11,7 @@ import CoreLocation
 
 typealias MarkerAttribute = (name: String, value: CustomStringConvertible)
 
-extension MarkerProtocol {
+extension Marker {
     var attributes: [MarkerAttribute] {
         var baseAttributes: [MarkerAttribute] = [
             ("ID", self.markerId),

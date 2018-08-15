@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		550573A31FBE8BD000A371FA /* DirectionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */; };
-		550573AC1FBE8F0200A371FA /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
+		550573AC1FBE8F0200A371FA /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* Marker.swift */; };
 		550573AE1FBE90EB00A371FA /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */; };
 		550573B01FBE914A00A371FA /* MockMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573AF1FBE914A00A371FA /* MockMarker.swift */; };
-		5509D03F1FB170DF002C9577 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D03E1FB170DF002C9577 /* Marker.swift */; };
-		5509D0451FB175F7002C9577 /* MarkerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D0441FB175F7002C9577 /* MarkerDB.swift */; };
+		5509D03F1FB170DF002C9577 /* RealmMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D03E1FB170DF002C9577 /* RealmMarker.swift */; };
+		5509D0451FB175F7002C9577 /* RealmMarkerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D0441FB175F7002C9577 /* RealmMarkerDB.swift */; };
 		550FFDCF1FC6BA8800313946 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552529171FC6B316007E7E5F /* Double+Rounding.swift */; };
 		552529161FC6AED3007E7E5F /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552529151FC6AED3007E7E5F /* SearchTableViewCell.swift */; };
 		552529181FC6B317007E7E5F /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552529171FC6B316007E7E5F /* Double+Rounding.swift */; };
@@ -25,13 +25,14 @@
 		5534F7221FB6C75B00CDAF71 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */; };
 		5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */; };
 		5534F7261FB6E8C200CDAF71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5534F7251FB6E8C100CDAF71 /* README.md */; };
+		559567022124174300D3635A /* MarkerDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559567012124174300D3635A /* MarkerDatabase.swift */; };
 		559E22621FC8CCBB007EAA5C /* MarkerProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22611FC8CCBB007EAA5C /* MarkerProtocolTests.swift */; };
 		559E22651FC8D469007EAA5C /* CopyableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22631FC8D1DE007EAA5C /* CopyableTableViewCell.swift */; };
 		559E22661FC8DB8B007EAA5C /* CopyableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22631FC8D1DE007EAA5C /* CopyableTableViewCell.swift */; };
-		55A1E639206627FF00C26FA6 /* MarkerProtocol+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */; };
-		55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */; };
+		55A1E639206627FF00C26FA6 /* Marker+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* Marker+MarkerAttribute.swift */; };
+		55A623B01FB4585700D4FE2D /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* Marker.swift */; };
 		55B4A4C31FBE4E220088EDF2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B4A4C21FBE4E220088EDF2 /* Media.xcassets */; };
-		55C74F6720661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */; };
+		55C74F6720661E33007BAB85 /* Marker+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* Marker+MarkerAttribute.swift */; };
 		55D72EE6208744240078A8B0 /* Pods_Emergency_Markers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D72EE5208744240078A8B0 /* Pods_Emergency_Markers.framework */; };
 		55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */; };
 		55E6FBA41FB16DDF00FADC4E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA31FB16DDF00FADC4E /* SearchViewController.swift */; };
@@ -71,9 +72,9 @@
 		550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewControllerTests.swift; sourceTree = "<group>"; };
 		550573A41FBE8BD000A371FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		550573AF1FBE914A00A371FA /* MockMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMarker.swift; sourceTree = "<group>"; };
-		5509D03E1FB170DF002C9577 /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		5509D03E1FB170DF002C9577 /* RealmMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMarker.swift; sourceTree = "<group>"; };
 		5509D0421FB17138002C9577 /* Marker.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Marker.csv; sourceTree = "<group>"; };
-		5509D0441FB175F7002C9577 /* MarkerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDB.swift; sourceTree = "<group>"; };
+		5509D0441FB175F7002C9577 /* RealmMarkerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMarkerDB.swift; sourceTree = "<group>"; };
 		552529151FC6AED3007E7E5F /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		552529171FC6B316007E7E5F /* Double+Rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		552E57BC1FB18AF00053F125 /* markers.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = markers.realm; sourceTree = "<group>"; };
@@ -84,11 +85,12 @@
 		5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerSharer.swift; sourceTree = "<group>"; };
 		5534F7251FB6E8C100CDAF71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		559567012124174300D3635A /* MarkerDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDatabase.swift; sourceTree = "<group>"; };
 		559E22611FC8CCBB007EAA5C /* MarkerProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocolTests.swift; sourceTree = "<group>"; };
 		559E22631FC8D1DE007EAA5C /* CopyableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableTableViewCell.swift; sourceTree = "<group>"; };
-		55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerProtocol.swift; sourceTree = "<group>"; };
+		55A623AF1FB4585700D4FE2D /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		55B4A4C21FBE4E220088EDF2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkerProtocol+MarkerAttribute.swift"; sourceTree = "<group>"; };
+		55C74F6620661E33007BAB85 /* Marker+MarkerAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Marker+MarkerAttribute.swift"; sourceTree = "<group>"; };
 		55D72EE5208744240078A8B0 /* Pods_Emergency_Markers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Emergency_Markers.framework; path = "../../Library/Developer/Xcode/DerivedData/Emergency_Markers-awggqpyfmfdyyzcqutmfsmyztpfa/Build/Products/Debug-iphonesimulator/Pods_Emergency_Markers.framework"; sourceTree = "<group>"; };
 		55E6FB9E1FB16DDF00FADC4E /* Emergency Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E6FBA11FB16DDF00FADC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,10 +158,11 @@
 			isa = PBXGroup;
 			children = (
 				552E57BC1FB18AF00053F125 /* markers.realm */,
-				5509D03E1FB170DF002C9577 /* Marker.swift */,
-				5509D0441FB175F7002C9577 /* MarkerDB.swift */,
-				55A623AF1FB4585700D4FE2D /* MarkerProtocol.swift */,
-				55C74F6620661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift */,
+				5509D03E1FB170DF002C9577 /* RealmMarker.swift */,
+				5509D0441FB175F7002C9577 /* RealmMarkerDB.swift */,
+				559567012124174300D3635A /* MarkerDatabase.swift */,
+				55A623AF1FB4585700D4FE2D /* Marker.swift */,
+				55C74F6620661E33007BAB85 /* Marker+MarkerAttribute.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,9 +494,9 @@
 			files = (
 				550573A31FBE8BD000A371FA /* DirectionsViewControllerTests.swift in Sources */,
 				550573AE1FBE90EB00A371FA /* InstructionsViewController.swift in Sources */,
-				550573AC1FBE8F0200A371FA /* MarkerProtocol.swift in Sources */,
+				550573AC1FBE8F0200A371FA /* Marker.swift in Sources */,
 				5530B6661FBFDC23009CE61C /* MarkerSharer.swift in Sources */,
-				55A1E639206627FF00C26FA6 /* MarkerProtocol+MarkerAttribute.swift in Sources */,
+				55A1E639206627FF00C26FA6 /* Marker+MarkerAttribute.swift in Sources */,
 				550FFDCF1FC6BA8800313946 /* Double+Rounding.swift in Sources */,
 				559E22621FC8CCBB007EAA5C /* MarkerProtocolTests.swift in Sources */,
 				559E22661FC8DB8B007EAA5C /* CopyableTableViewCell.swift in Sources */,
@@ -508,9 +511,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				55E6FBA61FB16DDF00FADC4E /* MarkerViewController.swift in Sources */,
-				5509D0451FB175F7002C9577 /* MarkerDB.swift in Sources */,
-				5509D03F1FB170DF002C9577 /* Marker.swift in Sources */,
-				55C74F6720661E33007BAB85 /* MarkerProtocol+MarkerAttribute.swift in Sources */,
+				5509D0451FB175F7002C9577 /* RealmMarkerDB.swift in Sources */,
+				559567022124174300D3635A /* MarkerDatabase.swift in Sources */,
+				5509D03F1FB170DF002C9577 /* RealmMarker.swift in Sources */,
+				55C74F6720661E33007BAB85 /* Marker+MarkerAttribute.swift in Sources */,
 				5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */,
 				559E22651FC8D469007EAA5C /* CopyableTableViewCell.swift in Sources */,
 				5534F7181FB6A3EF00CDAF71 /* MoreInfoViewController.swift in Sources */,
@@ -518,7 +522,7 @@
 				5534F7221FB6C75B00CDAF71 /* InstructionsViewController.swift in Sources */,
 				55E6FBA41FB16DDF00FADC4E /* SearchViewController.swift in Sources */,
 				55E6FBA21FB16DDF00FADC4E /* AppDelegate.swift in Sources */,
-				55A623B01FB4585700D4FE2D /* MarkerProtocol.swift in Sources */,
+				55A623B01FB4585700D4FE2D /* Marker.swift in Sources */,
 				552529161FC6AED3007E7E5F /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

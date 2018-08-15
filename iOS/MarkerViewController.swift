@@ -24,7 +24,7 @@ class MarkerViewController: UIViewController {
         return sharer
     }
 
-    var marker: MarkerProtocol?
+    var marker: Marker?
 
     var location: CLLocation?
 

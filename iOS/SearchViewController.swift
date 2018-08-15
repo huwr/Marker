@@ -15,14 +15,14 @@ class SearchViewController: UITableViewController {
         tableView.reloadData()
     }}
 
-    var database: MarkerDB? { didSet {
+    var database: MarkerDatabase? { didSet {
         self.markers = database?.all()
     }}
-    var markers: [MarkerProtocol]?
+    var markers: [Marker]?
 
     var showingClosest: Bool { return searchBarIsEmpty && currentLocation != nil }
 
-    private func marker(for row: Int) -> MarkerProtocol? {
+    private func marker(for row: Int) -> Marker? {
         guard showingClosest, let currentLocation = currentLocation else { return markers?[row] }
 
         if row == 0 {

@@ -16,7 +16,7 @@ private let numberFormatter = NumberFormatter()
 class MoreInfoViewController: UITableViewController {
     var sharer: MarkerSharer?
 
-    var marker: MarkerProtocol? { didSet {
+    var marker: Marker? { didSet {
         sharer = MarkerSharer(viewController: self)
         sharer?.marker = marker
     }}

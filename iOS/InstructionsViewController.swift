@@ -9,7 +9,7 @@
 import UIKit
 
 class InstructionsViewController: UIViewController {
-    var marker: MarkerProtocol? { didSet {
+    var marker: Marker? { didSet {
         configureView()
     }}
 

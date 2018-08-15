@@ -2,48 +2,63 @@
 //  Marker.swift
 //  Emergency Markers
 //
-//  Created by Huw Rowlands on 7/11/17.
+//  Created by Huw Rowlands on 9/11/17.
 //  Copyright © 2017 Huw Rowlands. All rights reserved.
 //
 
 import Foundation
-import RealmSwift
 import CoreLocation
+import MapKit
 
-class Marker: Object, MarkerProtocol {
+protocol Marker: MKAnnotation {
+    var coordinate: CLLocationCoordinate2D { get }
 
-    @objc dynamic var xPosition: Double = 0
-    @objc dynamic var yPosition: Double = 0
-    @objc dynamic var markerId = ""
-    @objc dynamic var markerAddress = ""
-    @objc dynamic var markerStatus = ""
-    @objc dynamic var latitude: Double = 0
-    @objc dynamic var longitude: Double = 0
-    @objc dynamic var environmentName = ""
-    @objc dynamic var aRoadName = ""
-    @objc dynamic var aRoadType = ""
-    @objc dynamic var aRoadSuffix = ""
-    @objc dynamic var bRoadName = ""
-    @objc dynamic var bRoadType = ""
-    @objc dynamic var bRoadSuffix = ""
-    @objc dynamic var locality = ""
-    @objc dynamic var dirText = ""
-    @objc dynamic var objectId = 0
+    // CAD Directions
+    var directions: String { get }
+    var localizedInstructions: String { get }
 
-    var coordinate: CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    // Marker ID like KCT040
+    var markerId: String { get }
+
+    //eg DONCASTER EAST
+    var locality: String { get }
+
+    //eg MANNINGHAM CITY
+    var environmentName: String { get }
+
+    var aRoad: String { get }
+    var bRoad: String { get }
+
+    //eg TURNTABLE CAR PARK
+    var markerAddress: String { get }
+    var hasMarkerAddress: Bool { get }
+}
+
+extension Marker {
+    var location: CLLocation {
+        return CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
 
-    var directions: String {
-        return dirText
+    func distance(from origin: CLLocation?) -> Double? {
+        guard let origin = origin else { return nil }
+        return origin.distance(from: location)
     }
 
-    var aRoad: String {
-        return [aRoadName, aRoadType, aRoadSuffix].joined(separator: " ")
+    var locationDescription: String {
+        return "\(environmentName.localizedCapitalized), \(locality.localizedCapitalized)"
     }
 
-    var bRoad: String {
-        return [bRoadName, bRoadType, bRoadSuffix].joined(separator: " ")
+    var localizedInstructions: String {
+        //The directions text in the dataset is gross… wish I could do more than this
+        let title = "EMERG MRKR \(markerId): "
+
+        return directions
+            .replacingOccurrences(of: "=>", with: "\t→")
+            .replacingOccurrences(of: title, with: "")
+            .replacingOccurrences(of: "NEAREST I/S", with: "NEAREST INTERSECTION:")
+            .replacingOccurrences(of: "   ", with: " ")
+            .replacingOccurrences(of: "  ", with: " ")
     }
 
+    var hasMarkerAddress: Bool { return markerAddress.trimmingCharacters(in: CharacterSet.whitespaces) != "" }
 }
