@@ -10,18 +10,14 @@ import Quick
 import Nimble
 import CoreLocation
 
-class MarkerProtocolTests: QuickSpec {
+class MarkerTests: QuickSpec {
     override func spec() {
-        let mockMarker: MockMarker = MockMarker(markerId: "TEST123")
-        let subject: MarkerProtocol = mockMarker
+        var subject: Marker = MockMarkerFactory.marker!
 
         describe("instructions") {
             beforeEach {
-                mockMarker.directions = """
-EMERG MRKR TEST123: NEAREST I/S CORN HILL RD & MT BULLER RD
-=> TRAVEL SOUTH 425M UPHILL ON MT BULLER RD TO HELL CORNER
-=> THEN NORTH-WEST 130M ON GRASS HOME TRAIL BEHIND TRAFFIC CONTROL HUT AT HELL CORNER
-=> NO VEHICLE ACCESS IN WINTER
+                subject.directions = """
+NEAREST INTERSECTION: CORN HILL RD & MT BULLER RD→ TRAVEL SOUTH 425M UPHILL ON MT BULLER RD TO HELL CORNER→ THEN NORTH-WEST 130M ON GRASS HOME TRAIL BEHIND TRAFFIC CONTROL HUT AT HELL CORNER→ NO VEHICLE ACCESS IN WINTER>, got <EMERG MRKR TEST123: NEAREST INTERSECTION: CORN HILL RD & MT BULLER RD→ TRAVEL SOUTH 425M UPHILL ON MT BULLER RD TO HELL CORNER→ THEN NORTH-WEST 130M ON GRASS HOME TRAIL BEHIND TRAFFIC CONTROL HUT AT HELL CORNER→ NO VEHICLE ACCESS IN WINTER
 """
             }
 
@@ -38,8 +34,8 @@ EMERG MRKR TEST123: NEAREST I/S CORN HILL RD & MT BULLER RD
 
         describe("location description") {
             beforeEach {
-                mockMarker.environmentName = "ENVIRONMENT NAME"
-                mockMarker.locality = "LOCALITY NAME"
+                subject.environmentName = "ENVIRONMENT NAME"
+                subject.locality = "LOCALITY NAME"
             }
 
             it("combines them nicely") {
@@ -53,16 +49,13 @@ EMERG MRKR TEST123: NEAREST I/S CORN HILL RD & MT BULLER RD
             let testUTM = "223074"
 
             beforeEach {
-                mockMarker.coordinate = CLLocationCoordinate2D(latitude: testLat, longitude: testLong)
+                subject.latitude = testLat
+                subject.longitude = testLong
             }
 
             it("gives it to you as a corelocation") {
                 expect(subject.location.coordinate.latitude).to(equal(testLat))
                 expect(subject.location.coordinate.longitude).to(equal(testLong))
-            }
-
-            it("gives it to you a UTM") {
-                expect(subject.location.coordinate.utmCoordinate().shortformUTM).to(equal(testUTM))
             }
         }
     }

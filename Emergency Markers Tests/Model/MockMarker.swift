@@ -10,25 +10,32 @@ import Foundation
 import MapKit
 import CoreLocation
 
-class MockMarker: NSObject, MarkerProtocol {
-    var coordinate = CLLocationCoordinate2D(latitude: .init(-37.8136), longitude: .init(144.9631))
-
-    var directions: String = "GO DOWN THE PATH"
-
-    var markerId: String = "TEST-123"
-
-    var locality: String = "Test Land"
-
-    var environmentName: String = "Test City"
-
-    var aRoad: String = "Big Road"
-
-    var bRoad: String = "Smaller Road"
-
-    var markerAddress: String = "123 Test Street"
-
-    convenience init(markerId: String) {
-        self.init()
-        self.markerId = markerId
+struct MockMarkerFactory {
+    static var marker: Marker? {
+        return MarkerFileDatabase.init(with: mockText.data(using: .utf8))?.all().first
     }
 }
+
+let mockText = """
+[
+{
+"xPosition": 145.18014500200437,
+"yPosition": -37.75653799691778,
+"markerId": "MAN125",
+"markerAddress": "",
+"markerStatus": "IN CAD",
+"latitude": -37.75654,
+"longitude": 145.1801,
+"environmentName": "MANNINGHAM CITY",
+"aRoadName": "HARMAN",
+"aRoadType": "CL",
+"aRoadSuffix": "",
+"bRoadName": "DEEP CREEK",
+"bRoadType": "DR",
+"bRoadSuffix": "",
+"locality": "DONCASTER EAST",
+"dirText": "EMERG MRKR MAN125: NEAREST I/S HARMAN CL & DEEP CREEK DR\\n=> TRAVEL NORTH-EAST 65M ALONG DEEP CRK DRV ARRIVE BIKE ACCESS TRL",
+"objectId": 2001
+}
+]
+"""

@@ -22,8 +22,8 @@ private func loadFromFile() -> Data? {
 struct MarkerFileDatabase: MarkerDatabase {
     private var markers: [Marker] = []
 
-    init?() {
-        guard let data = loadFromFile() else {
+    init?(with data: Data? = loadFromFile()) {
+        guard let data = data else {
             return nil
         }
         let decoder = JSONDecoder()
