@@ -13,7 +13,7 @@ import UIKit
 class MoreInfoViewControllerTests: QuickSpec {
     override func spec() {
         var subject: MoreInfoViewController?
-        var marker: Marker = MockMarkerFactory.marker!
+        var marker: MockMarker = MockMarker.defaultInstance()
 
         describe("Segueing") {
             beforeEach {
@@ -28,7 +28,7 @@ class MoreInfoViewControllerTests: QuickSpec {
                 subject?.prepare(for: segue, sender: nil)
 
                 expect(desintationVC.marker).toNot(beNil())
-//                expect(desintationVC.marker?.isEqual(marker)).to(beTrue())
+                expect(desintationVC.marker?.markerId).to(equal(marker.markerId))
             }
         }
 

@@ -11,13 +11,19 @@ import Nimble
 import CoreLocation
 
 class MarkerTests: QuickSpec {
+
+    // swiftlint:disable function_body_length
     override func spec() {
-        var subject: Marker = MockMarkerFactory.marker!
+        var subject: Marker = MockMarker.defaultInstance()
 
         describe("instructions") {
             beforeEach {
+                subject.markerId = "TEST123"
                 subject.directions = """
-NEAREST INTERSECTION: CORN HILL RD & MT BULLER RD→ TRAVEL SOUTH 425M UPHILL ON MT BULLER RD TO HELL CORNER→ THEN NORTH-WEST 130M ON GRASS HOME TRAIL BEHIND TRAFFIC CONTROL HUT AT HELL CORNER→ NO VEHICLE ACCESS IN WINTER>, got <EMERG MRKR TEST123: NEAREST INTERSECTION: CORN HILL RD & MT BULLER RD→ TRAVEL SOUTH 425M UPHILL ON MT BULLER RD TO HELL CORNER→ THEN NORTH-WEST 130M ON GRASS HOME TRAIL BEHIND TRAFFIC CONTROL HUT AT HELL CORNER→ NO VEHICLE ACCESS IN WINTER
+EMERG MRKR TEST123: NEAREST I/S CORN HILL RD & MT BULLER RD
+=> TRAVEL SOUTH 425M UPHILL ON MT BULLER RD TO HELL CORNER
+=> THEN NORTH-WEST 130M ON GRASS HOME TRAIL BEHIND TRAFFIC CONTROL HUT AT HELL CORNER
+=> NO VEHICLE ACCESS IN WINTER
 """
             }
 
@@ -46,7 +52,6 @@ NEAREST INTERSECTION: CORN HILL RD & MT BULLER RD→ TRAVEL SOUTH 425M UPHILL ON
         describe("location") {
             let testLat = CLLocationDegrees.init(-37.8633)
             let testLong = CLLocationDegrees.init(144.9802)
-            let testUTM = "223074"
 
             beforeEach {
                 subject.latitude = testLat
@@ -56,6 +61,30 @@ NEAREST INTERSECTION: CORN HILL RD & MT BULLER RD→ TRAVEL SOUTH 425M UPHILL ON
             it("gives it to you as a corelocation") {
                 expect(subject.location.coordinate.latitude).to(equal(testLat))
                 expect(subject.location.coordinate.longitude).to(equal(testLong))
+            }
+        }
+
+        describe("A road") {
+            beforeEach {
+                subject.aRoadName = "A-ROAD-NAME"
+                subject.aRoadType = "A-ROAD-TYPE"
+                subject.aRoadSuffix = "A-ROAD-SUFFIX"
+            }
+
+            it("combines all attributes nicely") {
+                expect(subject.aRoad).to(equal("A-ROAD-NAME A-ROAD-TYPE A-ROAD-SUFFIX"))
+            }
+        }
+
+        describe("B road") {
+            beforeEach {
+                subject.bRoadName = "B-ROAD-NAME"
+                subject.bRoadType = "B-ROAD-TYPE"
+                subject.bRoadSuffix = "B-ROAD-SUFFIX"
+            }
+
+            it("combines all attributes nicely") {
+                expect(subject.bRoad).to(equal("B-ROAD-NAME B-ROAD-TYPE B-ROAD-SUFFIX"))
             }
         }
     }

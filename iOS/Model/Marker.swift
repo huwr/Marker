@@ -10,49 +10,33 @@ import Foundation
 import CoreLocation
 import MapKit
 
-struct Marker: Decodable {
-    var latitude: Double
+protocol Marker {
+    var latitude: Double { get set }
 
-    var longitude: Double
+    var longitude: Double { get set }
 
     // CAD Directions
-    var directions: String
+    var directions: String { get set }
 
     // Marker ID like KCT040
-    var markerId: String
+    var markerId: String { get set }
 
     //eg DONCASTER EAST
-    var locality: String
+    var locality: String { get set }
 
     //eg MANNINGHAM CITY
-    var environmentName: String
+    var environmentName: String { get set }
 
-    var aRoadName: String
-    var aRoadType: String
-    var aRoadSuffix: String
+    var aRoadName: String { get set }
+    var aRoadType: String { get set }
+    var aRoadSuffix: String { get set }
 
-    var bRoadName: String
-    var bRoadType: String
-    var bRoadSuffix: String
+    var bRoadName: String { get set }
+    var bRoadType: String { get set }
+    var bRoadSuffix: String { get set }
 
     //eg TURNTABLE CAR PARK
-    var markerAddress: String
-
-    enum CodingKeys: String, CodingKey {
-        case latitude
-        case longitude
-        case directions = "dirText"
-        case markerId
-        case locality
-        case environmentName
-        case aRoadName
-        case aRoadType
-        case aRoadSuffix
-        case bRoadName
-        case bRoadType
-        case bRoadSuffix
-        case markerAddress
-    }
+    var markerAddress: String { get set }
 }
 
 extension Marker {

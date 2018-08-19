@@ -12,18 +12,17 @@ import Nimble
 class InstructionsViewControllerTests: QuickSpec {
     override func spec() {
         var subject: InstructionsViewController?
-        var marker: Marker?
+        let marker: Marker = MockMarker.defaultInstance()
 
         describe("setting the marker") {
             beforeEach {
                 subject = InstructionsViewController()
                 subject?.directionsView = UITextView()
-                marker = MockMarkerFactory.marker
             }
 
             it("sets the localised directions when setting marker") {
                 subject?.marker = marker
-                expect(subject?.directionsView?.text).to(equal(MockMarkerFactory.marker?.localizedInstructions))
+                expect(subject?.directionsView?.text).to(equal(marker.localizedInstructions))
             }
         }
     }

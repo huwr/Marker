@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		550573A31FBE8BD000A371FA /* DirectionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */; };
+		550573A31FBE8BD000A371FA /* InstructionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573A21FBE8BD000A371FA /* InstructionsViewControllerTests.swift */; };
 		550573AC1FBE8F0200A371FA /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* Marker.swift */; };
 		550573AE1FBE90EB00A371FA /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */; };
 		550573B01FBE914A00A371FA /* MockMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573AF1FBE914A00A371FA /* MockMarker.swift */; };
@@ -22,6 +22,8 @@
 		5534F7221FB6C75B00CDAF71 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */; };
 		5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */; };
 		5534F7261FB6E8C200CDAF71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5534F7251FB6E8C100CDAF71 /* README.md */; };
+		555A7B202128FF8500CEF3BB /* DecodableMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A7B1F2128FF8500CEF3BB /* DecodableMarker.swift */; };
+		555A7B212129084E00CEF3BB /* DecodableMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A7B1F2128FF8500CEF3BB /* DecodableMarker.swift */; };
 		559567022124174300D3635A /* MarkerDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559567012124174300D3635A /* MarkerDatabase.swift */; };
 		559567042124199F00D3635A /* Marker.json in Resources */ = {isa = PBXBuildFile; fileRef = 559567032124199F00D3635A /* Marker.json */; };
 		559E22621FC8CCBB007EAA5C /* MarkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22611FC8CCBB007EAA5C /* MarkerTests.swift */; };
@@ -74,7 +76,7 @@
 		1B836E3766AF4061F218B0A2 /* Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		24B446B17E7EB1AECC81AC5C /* Pods-Emergency Markers-Test-Emergency Markers Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emergency Markers-Test-Emergency Markers Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emergency Markers-Test-Emergency Markers Tests/Pods-Emergency Markers-Test-Emergency Markers Tests.release.xcconfig"; sourceTree = "<group>"; };
 		550573A01FBE8BD000A371FA /* Emergency Markers Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Emergency Markers Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewControllerTests.swift; sourceTree = "<group>"; };
+		550573A21FBE8BD000A371FA /* InstructionsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewControllerTests.swift; sourceTree = "<group>"; };
 		550573A41FBE8BD000A371FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		550573AF1FBE914A00A371FA /* MockMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMarker.swift; sourceTree = "<group>"; };
 		5509D0421FB17138002C9577 /* Marker.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Marker.csv; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerSharer.swift; sourceTree = "<group>"; };
 		5534F7251FB6E8C100CDAF71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		555A7B1F2128FF8500CEF3BB /* DecodableMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableMarker.swift; sourceTree = "<group>"; };
 		559567012124174300D3635A /* MarkerDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDatabase.swift; sourceTree = "<group>"; };
 		559567032124199F00D3635A /* Marker.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Marker.json; sourceTree = "<group>"; };
 		559E22611FC8CCBB007EAA5C /* MarkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerTests.swift; sourceTree = "<group>"; };
@@ -134,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				559E22611FC8CCBB007EAA5C /* MarkerTests.swift */,
-				550573A21FBE8BD000A371FA /* DirectionsViewControllerTests.swift */,
+				550573A21FBE8BD000A371FA /* InstructionsViewControllerTests.swift */,
 				5530B6631FBFDB78009CE61C /* MoreInfoViewControllerTests.swift */,
 				550573AA1FBE8DE400A371FA /* Model */,
 				550573A41FBE8BD000A371FA /* Info.plist */,
@@ -166,6 +169,7 @@
 				559567012124174300D3635A /* MarkerDatabase.swift */,
 				55A623AF1FB4585700D4FE2D /* Marker.swift */,
 				55C74F6620661E33007BAB85 /* Marker+MarkerAttribute.swift */,
+				555A7B1F2128FF8500CEF3BB /* DecodableMarker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -493,7 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55EBDD452124363F00CFC867 /* SearchViewController.swift in Sources */,
-				550573A31FBE8BD000A371FA /* DirectionsViewControllerTests.swift in Sources */,
+				550573A31FBE8BD000A371FA /* InstructionsViewControllerTests.swift in Sources */,
 				550573AE1FBE90EB00A371FA /* InstructionsViewController.swift in Sources */,
 				55EBDD442124363D00CFC867 /* MarkerViewController.swift in Sources */,
 				55EBDD432124363100CFC867 /* MarkerDatabase.swift in Sources */,
@@ -505,6 +509,7 @@
 				559E22661FC8DB8B007EAA5C /* CopyableTableViewCell.swift in Sources */,
 				5530B6651FBFDBA5009CE61C /* MoreInfoViewController.swift in Sources */,
 				550573B01FBE914A00A371FA /* MockMarker.swift in Sources */,
+				555A7B212129084E00CEF3BB /* DecodableMarker.swift in Sources */,
 				55EBDD462124395100CFC867 /* SearchTableViewCell.swift in Sources */,
 				55EBDD422124362F00CFC867 /* MarkerFileDatabase.swift in Sources */,
 				5530B6641FBFDB78009CE61C /* MoreInfoViewControllerTests.swift in Sources */,
@@ -520,6 +525,7 @@
 				55C74F6720661E33007BAB85 /* Marker+MarkerAttribute.swift in Sources */,
 				5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */,
 				559E22651FC8D469007EAA5C /* CopyableTableViewCell.swift in Sources */,
+				555A7B202128FF8500CEF3BB /* DecodableMarker.swift in Sources */,
 				5534F7181FB6A3EF00CDAF71 /* MoreInfoViewController.swift in Sources */,
 				552529181FC6B317007E7E5F /* Double+Rounding.swift in Sources */,
 				5534F7221FB6C75B00CDAF71 /* InstructionsViewController.swift in Sources */,

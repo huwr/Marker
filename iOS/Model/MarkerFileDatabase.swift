@@ -29,7 +29,7 @@ struct MarkerFileDatabase: MarkerDatabase {
         let decoder = JSONDecoder()
 
         do {
-            markers = try decoder.decode([Marker].self, from: data).sorted(by: { lhs, rhs in
+            markers = try decoder.decode([DecodableMarker].self, from: data).sorted(by: { lhs, rhs in
                 lhs.markerId < rhs.markerId
             })
         } catch let error {
