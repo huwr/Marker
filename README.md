@@ -13,3 +13,5 @@ TODO
 
 * 'favourite' markers
 * iOS 12
+* search by environment
+* show all markers on a mapview
