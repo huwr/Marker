@@ -50,6 +50,10 @@ class MoreInfoViewController: UITableViewController {
 
     // MARK: View lifecycle
 
+    override func viewDidLoad() {
+        tableView.estimatedRowHeight = 44
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -87,6 +91,10 @@ class MoreInfoViewController: UITableViewController {
         copyableCell.title = attributes.name
         copyableCell.detail = attributes.value.description
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     // MARK: Copying!

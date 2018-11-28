@@ -44,6 +44,7 @@ class SearchViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "KCT024"
+        searchController.searchBar.accessibilityLabel = "Search by ID, locality or environment."
         searchController.searchBar.tintColor = UIColor.white
 
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
@@ -52,6 +53,8 @@ class SearchViewController: UITableViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
 
         definesPresentationContext = true
+
+        tableView.estimatedRowHeight = 60
 
         self.startUpdatingLocation()
     }
@@ -103,7 +106,7 @@ class SearchViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+        return UITableViewAutomaticDimension
     }
 }
 

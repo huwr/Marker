@@ -17,6 +17,7 @@ class MarkerViewController: UIViewController {
     @IBOutlet var showMoreInfoButton: UIBarButtonItem?
     @IBOutlet var mapView: MKMapView?
     @IBOutlet var mapStyle: UISegmentedControl?
+    @IBOutlet var tapSearchPrompt: UILabel?
 
     var sharer: MarkerSharer {
         var sharer = MarkerSharer(viewController: self)
@@ -49,6 +50,7 @@ class MarkerViewController: UIViewController {
         showMoreInfoButton?.isEnabled = !mapHidden
         mapStyle?.isHidden = mapHidden
         mapView?.isHidden = mapHidden
+        tapSearchPrompt?.isHidden = !mapHidden
     } }
 
     private func configureMapView() {
@@ -105,6 +107,7 @@ class MarkerViewController: UIViewController {
         navigationItem.rightBarButtonItem = navigateButton
         navigationItem.rightBarButtonItem?.isEnabled = false
         mapView?.isHidden = true
+        mapView?.isAccessibilityElement = false
         configureView()
     }
 

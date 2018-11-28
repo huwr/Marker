@@ -22,6 +22,13 @@ class CopyableTableViewCell: UITableViewCell {
         detailLabel?.text = detail
         } }
 
-    @IBOutlet var detailLabel: UITextField?
+    @IBOutlet var detailLabel: UILabel?
     @IBOutlet var titleLabel: UILabel?
+
+    override var accessibilityLabel: String? {
+        get {
+            return "\(title): \(detail)"
+        }
+        set { }
+    }
 }
