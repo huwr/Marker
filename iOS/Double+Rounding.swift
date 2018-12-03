@@ -15,6 +15,9 @@ extension Double {
         return (self * divisor).rounded() / divisor
     }
 
+    /// A display version of the receiver, as a `String`. Rounds to nearest integer by default.
+    ///
+    /// - parameter places: The number of places to round to. By default, 0 places.
     func display(roundedTo places: UInt = 0) -> String {
         return places == 0 ? "\(Int(self))" : "\(self.roundTo(places))"
     }
