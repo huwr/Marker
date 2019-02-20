@@ -9,6 +9,7 @@
 import Quick
 import Nimble
 import CoreLocation
+@testable import Emergency_Markers
 
 class MarkerTests: QuickSpec {
 

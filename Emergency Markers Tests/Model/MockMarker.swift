@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import CoreLocation
+@testable import Emergency_Markers
 
 struct MockMarker: Marker {
     var latitude: Double

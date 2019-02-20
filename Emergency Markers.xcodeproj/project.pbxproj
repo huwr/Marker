@@ -8,28 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		550573A31FBE8BD000A371FA /* InstructionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573A21FBE8BD000A371FA /* InstructionsViewControllerTests.swift */; };
-		550573AC1FBE8F0200A371FA /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* Marker.swift */; };
-		550573AE1FBE90EB00A371FA /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */; };
 		550573B01FBE914A00A371FA /* MockMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550573AF1FBE914A00A371FA /* MockMarker.swift */; };
-		550FFDCF1FC6BA8800313946 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552529171FC6B316007E7E5F /* Double+Rounding.swift */; };
 		552529161FC6AED3007E7E5F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552529151FC6AED3007E7E5F /* ListTableViewCell.swift */; };
 		552529181FC6B317007E7E5F /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552529171FC6B316007E7E5F /* Double+Rounding.swift */; };
 		5530B6641FBFDB78009CE61C /* MoreInfoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530B6631FBFDB78009CE61C /* MoreInfoViewControllerTests.swift */; };
-		5530B6651FBFDBA5009CE61C /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7171FB6A3EF00CDAF71 /* MoreInfoViewController.swift */; };
-		5530B6661FBFDC23009CE61C /* MarkerSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */; };
 		5534F7181FB6A3EF00CDAF71 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7171FB6A3EF00CDAF71 /* MoreInfoViewController.swift */; };
 		5534F71C1FB6A79E00CDAF71 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5534F71B1FB6A79E00CDAF71 /* icon.png */; };
 		5534F7221FB6C75B00CDAF71 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7211FB6C75B00CDAF71 /* InstructionsViewController.swift */; };
 		5534F7241FB6CD6300CDAF71 /* MarkerSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534F7231FB6CD6300CDAF71 /* MarkerSharer.swift */; };
 		5534F7261FB6E8C200CDAF71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5534F7251FB6E8C100CDAF71 /* README.md */; };
 		555A7B202128FF8500CEF3BB /* DecodableMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A7B1F2128FF8500CEF3BB /* DecodableMarker.swift */; };
-		555A7B212129084E00CEF3BB /* DecodableMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A7B1F2128FF8500CEF3BB /* DecodableMarker.swift */; };
 		559567022124174300D3635A /* MarkerDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559567012124174300D3635A /* MarkerDatabase.swift */; };
 		559567042124199F00D3635A /* Marker.json in Resources */ = {isa = PBXBuildFile; fileRef = 559567032124199F00D3635A /* Marker.json */; };
 		559E22621FC8CCBB007EAA5C /* MarkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22611FC8CCBB007EAA5C /* MarkerTests.swift */; };
 		559E22651FC8D469007EAA5C /* CopyableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22631FC8D1DE007EAA5C /* CopyableTableViewCell.swift */; };
-		559E22661FC8DB8B007EAA5C /* CopyableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E22631FC8D1DE007EAA5C /* CopyableTableViewCell.swift */; };
-		55A1E639206627FF00C26FA6 /* Marker+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* Marker+MarkerAttribute.swift */; };
 		55A623B01FB4585700D4FE2D /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A623AF1FB4585700D4FE2D /* Marker.swift */; };
 		55B4A4C31FBE4E220088EDF2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B4A4C21FBE4E220088EDF2 /* Media.xcassets */; };
 		55C74F6720661E33007BAB85 /* Marker+MarkerAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C74F6620661E33007BAB85 /* Marker+MarkerAttribute.swift */; };
@@ -40,12 +32,6 @@
 		55E6FBA91FB16DDF00FADC4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E6FBA71FB16DDF00FADC4E /* Main.storyboard */; };
 		55E6FBAE1FB16DDF00FADC4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E6FBAC1FB16DDF00FADC4E /* LaunchScreen.storyboard */; };
 		55EBDD4121241B2000CFC867 /* MarkerFileDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBDD4021241B2000CFC867 /* MarkerFileDatabase.swift */; };
-		55EBDD422124362F00CFC867 /* MarkerFileDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBDD4021241B2000CFC867 /* MarkerFileDatabase.swift */; };
-		55EBDD432124363100CFC867 /* MarkerDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559567012124174300D3635A /* MarkerDatabase.swift */; };
-		55EBDD442124363D00CFC867 /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA51FB16DDF00FADC4E /* MarkerViewController.swift */; };
-		55EBDD452124363F00CFC867 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6FBA31FB16DDF00FADC4E /* ListViewController.swift */; };
-		55EBDD462124395100CFC867 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552529151FC6AED3007E7E5F /* ListTableViewCell.swift */; };
-		A901736BD2649859FE2E040B /* Pods_Emergency_Markers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D4BFF461E336646B9E6637 /* Pods_Emergency_Markers.framework */; };
 		D59158BC1B8DE6D54B6BE946 /* Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF97E2790562DB94663F12D /* Pods_Emergency_Markers_Test_Emergency_Markers_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,7 +112,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55D72EE6208744240078A8B0 /* Pods_Emergency_Markers.framework in Frameworks */,
-				A901736BD2649859FE2E040B /* Pods_Emergency_Markers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,22 +491,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55EBDD452124363F00CFC867 /* ListViewController.swift in Sources */,
 				550573A31FBE8BD000A371FA /* InstructionsViewControllerTests.swift in Sources */,
-				550573AE1FBE90EB00A371FA /* InstructionsViewController.swift in Sources */,
-				55EBDD442124363D00CFC867 /* MarkerViewController.swift in Sources */,
-				55EBDD432124363100CFC867 /* MarkerDatabase.swift in Sources */,
-				550573AC1FBE8F0200A371FA /* Marker.swift in Sources */,
-				5530B6661FBFDC23009CE61C /* MarkerSharer.swift in Sources */,
-				55A1E639206627FF00C26FA6 /* Marker+MarkerAttribute.swift in Sources */,
-				550FFDCF1FC6BA8800313946 /* Double+Rounding.swift in Sources */,
 				559E22621FC8CCBB007EAA5C /* MarkerTests.swift in Sources */,
-				559E22661FC8DB8B007EAA5C /* CopyableTableViewCell.swift in Sources */,
-				5530B6651FBFDBA5009CE61C /* MoreInfoViewController.swift in Sources */,
 				550573B01FBE914A00A371FA /* MockMarker.swift in Sources */,
-				555A7B212129084E00CEF3BB /* DecodableMarker.swift in Sources */,
-				55EBDD462124395100CFC867 /* ListTableViewCell.swift in Sources */,
-				55EBDD422124362F00CFC867 /* MarkerFileDatabase.swift in Sources */,
 				5530B6641FBFDB78009CE61C /* MoreInfoViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

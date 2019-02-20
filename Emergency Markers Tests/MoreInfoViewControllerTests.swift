@@ -9,6 +9,7 @@
 import Quick
 import Nimble
 import UIKit
+@testable import Emergency_Markers
 
 class MoreInfoViewControllerTests: QuickSpec {
     override func spec() {

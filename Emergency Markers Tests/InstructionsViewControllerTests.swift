@@ -8,6 +8,7 @@
 
 import Quick
 import Nimble
+@testable import Emergency_Markers
 
 class InstructionsViewControllerTests: QuickSpec {
     override func spec() {
