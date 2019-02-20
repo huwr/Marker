@@ -62,7 +62,7 @@ class MarkerViewController: UIViewController {
 
         directionsView?.text = marker.localizedInstructions
 
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(marker.coordinate, regionRadius, regionRadius)
+        let coordinateRegion = MKCoordinateRegion.init(center: marker.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView?.setRegion(coordinateRegion, animated: true)
 
         mapView?.addAnnotation(marker.pointAnnotation)
