@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         splitViewController.delegate = self
         // END APPLE TEMPLATE CODE
 
-        if let searchVC = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? SearchViewController {
+        if let searchVC = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? ListViewController {
             searchVC.database = MarkerFileDatabase()
         }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
+class ListTableViewCell: UITableViewCell {
     @IBOutlet var currentLocationIcon: UIImageView!
     @IBOutlet var detailLabel: UILabel?
     @IBOutlet var titleLabel: UILabel?

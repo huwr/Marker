@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class SearchViewController: UITableViewController {
+class ListViewController: UITableViewController {
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation? { didSet {
         tableView.reloadData()
@@ -93,7 +93,7 @@ class SearchViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        if let cell = cell as? SearchTableViewCell,
+        if let cell = cell as? ListTableViewCell,
             let marker = marker(for: indexPath.row) {
 
             cell.isClosest = showingClosest && indexPath.row == 0
@@ -110,7 +110,7 @@ class SearchViewController: UITableViewController {
     }
 }
 
-extension SearchViewController: UISearchResultsUpdating {
+extension ListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text ?? "")
     }
@@ -129,7 +129,7 @@ extension SearchViewController: UISearchResultsUpdating {
     }
 }
 
-extension SearchViewController: CLLocationManagerDelegate {
+extension ListViewController: CLLocationManagerDelegate {
     func startUpdatingLocation() {
         locationManager.requestWhenInUseAuthorization()
 
