@@ -11,13 +11,13 @@ import MapKit
 
 class MarkerViewController: UIViewController {
 
-    @IBOutlet var directionsContainerView: UIView?
-    @IBOutlet var directionsView: UITextView?
-    @IBOutlet var showInstructionsButton: UIBarButtonItem?
-    @IBOutlet var showMoreInfoButton: UIBarButtonItem?
-    @IBOutlet var mapView: MKMapView?
-    @IBOutlet var mapStyle: UISegmentedControl?
-    @IBOutlet var tapSearchPrompt: UILabel?
+    @IBOutlet private var directionsContainerView: UIView?
+    @IBOutlet private var directionsView: UITextView?
+    @IBOutlet private var showInstructionsButton: UIBarButtonItem?
+    @IBOutlet private var showMoreInfoButton: UIBarButtonItem?
+    @IBOutlet private var mapView: MKMapView?
+    @IBOutlet private var mapStyle: UISegmentedControl?
+    @IBOutlet private var tapSearchPrompt: UILabel?
 
     var sharer: MarkerSharer {
         var sharer = MarkerSharer(viewController: self)
