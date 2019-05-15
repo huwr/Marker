@@ -72,7 +72,8 @@ class ListViewController: UITableViewController {
             let object = marker(for: indexPath.row) else { return }
 
         if let markerVC = (segue.destination as? UINavigationController)?.topViewController as? MarkerViewController {
-            markerVC.marker = object
+            markerVC.selectedMarker = object
+            markerVC.allMarkers = markers
             markerVC.location = currentLocation
             markerVC.navigationItem.title = object.markerId
             markerVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem

@@ -21,11 +21,16 @@ class MarkerViewController: UIViewController {
 
     var sharer: MarkerSharer {
         var sharer = MarkerSharer(viewController: self)
-        sharer.marker = marker
+        sharer.marker = selectedMarker
         return sharer
     }
 
-    var marker: Marker?
+    var selectedMarker: Marker? {
+        didSet {
+            directionsView?.text = selectedMarker?.localizedInstructions
+        }
+    }
+    var allMarkers: [Marker]?
 
     var location: CLLocation?
 
@@ -54,21 +59,25 @@ class MarkerViewController: UIViewController {
     } }
 
     private func configureMapView() {
-        guard let marker = marker else {
+        guard let marker = selectedMarker else {
             mapHidden = true
             return
         }
         mapHidden = false
 
-        directionsView?.text = marker.localizedInstructions
-
         let coordinateRegion = MKCoordinateRegion.init(center: marker.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView?.setRegion(coordinateRegion, animated: true)
 
-        mapView?.addAnnotation(marker.pointAnnotation)
+        let annotations = allMarkers?.map { $0.pointAnnotation }
+
+        if let annotations = annotations {
+            mapView?.addAnnotations(annotations)
+        }
+
+        mapView?.delegate = self
     }
 
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 1000 //metres
 
     // MARK: Map Style
 
@@ -115,7 +124,7 @@ class MarkerViewController: UIViewController {
         if segue.identifier == "showMoreInfo", let destinationNC = segue.destination as? UINavigationController,
             let moreInfoVC = destinationNC.viewControllers.first as? MoreInfoViewController {
             moreInfoVC.currentLocation = location
-            moreInfoVC.marker = marker
+            moreInfoVC.marker = selectedMarker
         }
     }
 
@@ -123,5 +132,17 @@ class MarkerViewController: UIViewController {
 
     @objc func actionPressed(_ sender: UIBarButtonItem) {
         sharer.presentMapsDialog(sender)
+    }
+}
+
+extension MarkerViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let title = view.annotation?.title ?? "" else {
+            return
+        }
+
+        if let new = allMarkers?.first(where: { $0.markerId == title }) {
+            selectedMarker = new
+        }
     }
 }
