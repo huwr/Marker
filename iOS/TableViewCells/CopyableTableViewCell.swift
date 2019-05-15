@@ -29,6 +29,8 @@ class CopyableTableViewCell: UITableViewCell {
         get {
             return "\(title): \(detail)"
         }
-        set { }
+        set {
+            super.accessibilityLabel = newValue
+        }
     }
 }
