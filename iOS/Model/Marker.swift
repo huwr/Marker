@@ -80,9 +80,9 @@ extension Marker {
     var hasMarkerAddress: Bool { return markerAddress.trimmingCharacters(in: CharacterSet.whitespaces) != "" }
 
     var pointAnnotation: MKPointAnnotation {
-        let annoation = MKPointAnnotation()
-        annoation.coordinate = self.coordinate
-        annoation.title = self.markerId
-        return annoation
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = self.coordinate
+        annotation.title = self.markerId
+        return annotation
     }
 }
