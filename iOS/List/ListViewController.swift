@@ -69,13 +69,13 @@ class ListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showDetail",
             let indexPath = tableView.indexPathForSelectedRow,
-            let object = marker(for: indexPath.row) else { return }
+            let selectedMarker = marker(for: indexPath.row) else { return }
 
         if let markerVC = (segue.destination as? UINavigationController)?.topViewController as? MarkerViewController {
-            markerVC.selectedMarker = object
+            markerVC.selectedMarker = selectedMarker
             markerVC.allMarkers = markers
             markerVC.location = currentLocation
-            markerVC.navigationItem.title = object.markerId
+            markerVC.navigationItem.title = selectedMarker.markerId
             markerVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             markerVC.navigationItem.leftItemsSupplementBackButton = true
         }
