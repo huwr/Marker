@@ -19,7 +19,7 @@ class MarkerViewController: UIViewController, MarkerSelectionDelegate {
     @IBOutlet private var directionsView: UITextView!
     @IBOutlet private var showInstructionsButton: UIBarButtonItem!
     @IBOutlet private var showMoreInfoButton: UIBarButtonItem!
-    @IBOutlet private var mapView: MKMapView!
+    @IBOutlet private var mapView: MKMapView?
     @IBOutlet private var mapStyle: UISegmentedControl!
     @IBOutlet private var tapSearchPrompt: UILabel!
 
@@ -66,27 +66,28 @@ class MarkerViewController: UIViewController, MarkerSelectionDelegate {
         showInstructionsButton?.isEnabled = !mapHidden
         showMoreInfoButton?.isEnabled = !mapHidden
         mapStyle?.isHidden = mapHidden
-        mapView.isHidden = mapHidden
+        mapView?.isHidden = mapHidden
         tapSearchPrompt?.isHidden = !mapHidden
     } }
 
     private func configureMapView() {
         guard let marker = selectedMarker else {
             mapHidden = true
-            mapView.setRegion(MKCoordinateRegion.melbourne, animated: false)
+            mapView?.setRegion(MKCoordinateRegion.melbourne, animated: false)
             return
         }
         mapHidden = false
 
         let coordinateRegion = MKCoordinateRegion.init(center: marker.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
+        mapView?.setRegion(coordinateRegion, animated: true)
 
         let annotations = allMarkers?.map { $0.pointAnnotation }
         if let annotations = annotations {
-            mapView.addAnnotations(annotations)
+            mapView?.removeAnnotations(annotations)
+            mapView?.addAnnotations(annotations)
         }
 
-        mapView.delegate = self
+        mapView?.delegate = self
     }
 
     let regionRadius: CLLocationDistance = 1000 //metres
@@ -96,9 +97,9 @@ class MarkerViewController: UIViewController, MarkerSelectionDelegate {
     @IBAction func mapStyleChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            mapView.mapType = .standard
+            mapView?.mapType = .standard
         default:
-            mapView.mapType = .hybrid
+            mapView?.mapType = .hybrid
         }
     }
 
