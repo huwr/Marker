@@ -96,11 +96,9 @@ class ListViewController: UITableViewController {
 
         if let cell = cell as? ListTableViewCell,
             let marker = marker(for: indexPath.row) {
+            let isClosest = showingClosest && indexPath.row == 0
 
-            cell.isClosest = showingClosest && indexPath.row == 0
-            cell.title = "\(marker.markerId)"
-            cell.detail = marker.locationDescription
-            cell.distance = marker.distance(from: currentLocation)
+            cell.configure(with: marker, isClosest: isClosest, distance: marker.distance(from: currentLocation))
         }
 
         return cell

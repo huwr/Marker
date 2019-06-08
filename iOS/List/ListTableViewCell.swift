@@ -10,28 +10,22 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
     @IBOutlet var currentLocationIcon: UIImageView!
-    @IBOutlet var detailLabel: UILabel?
-    @IBOutlet var titleLabel: UILabel?
-    @IBOutlet var distanceLabel: UILabel?
+    @IBOutlet var detailLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var distanceLabel: UILabel!
 
-    var title: String = "" { didSet {
-        titleLabel?.text = title
-    } }
+    func configure(with marker: Marker, isClosest: Bool, distance: Double?) {
+        titleLabel.text = marker.markerId
+        detailLabel.text = marker.locationDescription
 
-    var detail: String = "" { didSet {
-        detailLabel?.text = detail
-    } }
-
-    var distance: Double? { didSet {
         if let distance = distance {
             let displayValue = (distance / 1000).display(roundedTo: 2)
-            distanceLabel?.text = "\(displayValue) Km"
+            distanceLabel!.text = "\(displayValue) Km"
+            distanceLabel!.accessibilityLabel = "\(displayValue) kilometres"
         } else {
-            distanceLabel?.text = ""
+            distanceLabel!.text = ""
         }
-    } }
 
-    var isClosest: Bool = false { didSet {
         currentLocationIcon.isHidden = !isClosest
-    } }
+    }
 }
