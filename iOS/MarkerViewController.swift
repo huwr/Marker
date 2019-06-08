@@ -11,13 +11,13 @@ import MapKit
 
 class MarkerViewController: UIViewController {
 
-    @IBOutlet private var directionsContainerView: UIView?
-    @IBOutlet private var directionsView: UITextView?
-    @IBOutlet private var showInstructionsButton: UIBarButtonItem?
-    @IBOutlet private var showMoreInfoButton: UIBarButtonItem?
-    @IBOutlet private var mapView: MKMapView?
-    @IBOutlet private var mapStyle: UISegmentedControl?
-    @IBOutlet private var tapSearchPrompt: UILabel?
+    @IBOutlet private var directionsContainerView: UIView!
+    @IBOutlet private var directionsView: UITextView!
+    @IBOutlet private var showInstructionsButton: UIBarButtonItem!
+    @IBOutlet private var showMoreInfoButton: UIBarButtonItem!
+    @IBOutlet private var mapView: MKMapView!
+    @IBOutlet private var mapStyle: UISegmentedControl!
+    @IBOutlet private var tapSearchPrompt: UILabel!
 
     var sharer: MarkerSharer {
         var sharer = MarkerSharer(viewController: self)
@@ -54,7 +54,7 @@ class MarkerViewController: UIViewController {
         showInstructionsButton?.isEnabled = !mapHidden
         showMoreInfoButton?.isEnabled = !mapHidden
         mapStyle?.isHidden = mapHidden
-        mapView?.isHidden = mapHidden
+        mapView.isHidden = mapHidden
         tapSearchPrompt?.isHidden = !mapHidden
     } }
 
@@ -66,14 +66,14 @@ class MarkerViewController: UIViewController {
         mapHidden = false
 
         let coordinateRegion = MKCoordinateRegion.init(center: marker.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView?.setRegion(coordinateRegion, animated: true)
+        mapView.setRegion(coordinateRegion, animated: true)
 
         let annotations = allMarkers?.map { $0.pointAnnotation }
         if let annotations = annotations {
-            mapView?.addAnnotations(annotations)
+            mapView.addAnnotations(annotations)
         }
 
-        mapView?.delegate = self
+        mapView.delegate = self
     }
 
     let regionRadius: CLLocationDistance = 1000 //metres
@@ -83,9 +83,9 @@ class MarkerViewController: UIViewController {
     @IBAction func mapStyleChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            mapView?.mapType = .standard
+            mapView.mapType = .standard
         default:
-            mapView?.mapType = .hybrid
+            mapView.mapType = .hybrid
         }
     }
 
@@ -114,7 +114,6 @@ class MarkerViewController: UIViewController {
         let navigateButton = UIBarButtonItem(title: "Open Maps…", style: .plain, target: self, action: #selector(actionPressed(_:)))
         navigationItem.rightBarButtonItem = navigateButton
         navigationItem.rightBarButtonItem?.isEnabled = false
-        mapView?.isHidden = true
         mapView?.isAccessibilityElement = false
         configureView()
     }
