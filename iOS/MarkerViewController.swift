@@ -9,7 +9,11 @@
 import UIKit
 import MapKit
 
-class MarkerViewController: UIViewController {
+protocol ListSelectionDelegate: class {
+    func didSelect(_ marker: Marker?)
+}
+
+class MarkerViewController: UIViewController, MarkerSelectionDelegate {
 
     @IBOutlet private var directionsContainerView: UIView!
     @IBOutlet private var directionsView: UITextView!
@@ -28,11 +32,19 @@ class MarkerViewController: UIViewController {
     var selectedMarker: Marker? {
         didSet {
             directionsView?.text = selectedMarker?.localizedInstructions
+            title = selectedMarker?.markerId
         }
     }
-    var allMarkers: [Marker]?
+
+    var allMarkers: [Marker]? {
+        didSet {
+            configureMapView()
+        }
+    }
 
     var location: CLLocation?
+
+    weak var delegate: ListSelectionDelegate?
 
     // MARK: Directions
 
@@ -61,6 +73,7 @@ class MarkerViewController: UIViewController {
     private func configureMapView() {
         guard let marker = selectedMarker else {
             mapHidden = true
+            mapView.setRegion(MKCoordinateRegion.melbourne, animated: false)
             return
         }
         mapHidden = false
@@ -131,6 +144,13 @@ class MarkerViewController: UIViewController {
     @objc func actionPressed(_ sender: UIBarButtonItem) {
         sharer.presentMapsDialog(sender)
     }
+
+    // MARK: MarkerSelectionDelegate
+
+    func select(_ marker: Marker) {
+        selectedMarker = marker
+        configureView()
+    }
 }
 
 extension MarkerViewController: MKMapViewDelegate {
@@ -141,6 +161,15 @@ extension MarkerViewController: MKMapViewDelegate {
 
         if let new = allMarkers?.first(where: { $0.markerId == title }) {
             selectedMarker = new
+
+            delegate?.didSelect(selectedMarker)
         }
+    }
+}
+
+private extension MKCoordinateRegion {
+    static var melbourne: MKCoordinateRegion {
+        let melbourne = CLLocationCoordinate2D(latitude: -37.8633, longitude: 144.9802)
+        return MKCoordinateRegion(center: melbourne, latitudinalMeters: 1000, longitudinalMeters: 1000)
     }
 }

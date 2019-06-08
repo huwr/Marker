@@ -9,7 +9,13 @@
 import UIKit
 import CoreLocation
 
-class ListViewController: UITableViewController {
+protocol MarkerSelectionDelegate: class {
+    func select(_ marker: Marker)
+    var location: CLLocation? { get set }
+    var allMarkers: [Marker]? { get set }
+}
+
+class ListViewController: UITableViewController, ListSelectionDelegate {
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation? { didSet {
         tableView.reloadData()
@@ -22,6 +28,8 @@ class ListViewController: UITableViewController {
 
     var showingClosest: Bool { return searchBarIsEmpty && currentLocation != nil }
 
+    weak var delegate: MarkerSelectionDelegate?
+
     private func marker(for row: Int) -> Marker? {
         guard showingClosest, let currentLocation = currentLocation else { return markers?[row] }
 
@@ -29,6 +37,13 @@ class ListViewController: UITableViewController {
             return database?.closestTo(location: currentLocation)
         }
         return markers?[row - 1]
+    }
+
+    private func row(for marker: Marker) -> Int? {
+        guard let index = markers?.firstIndex(where: { marker.markerId == $0.markerId }) else {
+            return nil
+        }
+        return index + 1
     }
 
     let searchController = UISearchController(searchResultsController: nil)
@@ -64,20 +79,20 @@ class ListViewController: UITableViewController {
         super.viewWillAppear(animated)
     }
 
-    // MARK: - Segues
+    // MARK: - Movement
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showDetail",
-            let indexPath = tableView.indexPathForSelectedRow,
-            let selectedMarker = marker(for: indexPath.row) else { return }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedMarker = marker(for: indexPath.row) else {
+            return
+        }
 
-        if let markerVC = (segue.destination as? UINavigationController)?.topViewController as? MarkerViewController {
-            markerVC.selectedMarker = selectedMarker
-            markerVC.allMarkers = markers
-            markerVC.location = currentLocation
-            markerVC.navigationItem.title = selectedMarker.markerId
-            markerVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-            markerVC.navigationItem.leftItemsSupplementBackButton = true
+        delegate?.select(selectedMarker)
+        delegate?.allMarkers = markers
+        delegate?.location = currentLocation
+
+        if let markerViewController = delegate as? MarkerViewController,
+            let markerNavigationController = markerViewController.navigationController {
+            splitViewController?.showDetailViewController(markerNavigationController, sender: nil)
         }
     }
 
@@ -106,6 +121,19 @@ class ListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+
+    // MARK: ListSelectionDelegate
+
+    func didSelect(_ marker: Marker?) {
+        guard let marker = marker,
+            let row = row(for: marker) else {
+                return
+        }
+        let indexPath = IndexPath(row: row, section: 0)
+
+        tableView.indexPathsForSelectedRows?.forEach { tableView.deselectRow(at: $0, animated: true) }
+        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
     }
 }
 
