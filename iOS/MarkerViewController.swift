@@ -69,7 +69,6 @@ class MarkerViewController: UIViewController {
         mapView?.setRegion(coordinateRegion, animated: true)
 
         let annotations = allMarkers?.map { $0.pointAnnotation }
-
         if let annotations = annotations {
             mapView?.addAnnotations(annotations)
         }
