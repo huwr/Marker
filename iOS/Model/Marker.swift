@@ -53,10 +53,12 @@ extension Marker {
         return origin.distance(from: location)
     }
 
+    /// Combination of `aRoadName`, `aRoadType` and `aRoadSuffix`
     var aRoad: String {
         return [aRoadName, aRoadType, aRoadSuffix].joined(separator: " ")
     }
 
+    /// Combination of `bRoadName`, `bRoadType` and `bRoadSuffix`
     var bRoad: String {
         return [bRoadName, bRoadType, bRoadSuffix].joined(separator: " ")
     }

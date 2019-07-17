@@ -46,10 +46,21 @@ struct MarkerFileDatabase: MarkerDatabase {
     }
 
     func with(keyword: String) -> [Marker] {
-        return markers.filter {
-            $0.markerId.contains(keyword) ||
-                $0.environmentName.contains(keyword) ||
-                $0.locality.contains(keyword)
+        return markers.filter { marker in
+            searchableKeyPaths.contains { keyPath in
+                marker[keyPath: keyPath].contains(keyword)
+            }
         }
+    }
+
+    private var searchableKeyPaths: [KeyPath<Marker, String>] {
+        return [
+            \Marker.markerId,
+            \Marker.locality,
+            \Marker.environmentName,
+            \Marker.aRoad,
+            \Marker.bRoad,
+            \Marker.markerAddress
+        ]
     }
 }
