@@ -265,7 +265,7 @@
 				KnownAssetTags = (
 					db,
 				);
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Huw Rowlands";
 				TargetAttributes = {

@@ -118,9 +118,9 @@ class MarkerViewController: UIViewController, MarkerSelectionDelegate {
         }
 
         //MapStyle segment control
-        mapStyle?.backgroundColor = .white
-        mapStyle?.layer.cornerRadius = 4.0
-        mapStyle?.clipsToBounds = true
+//        mapStyle?.backgroundColor = .white
+//        mapStyle?.layer.cornerRadius = 4.0
+//        mapStyle?.clipsToBounds = true
     }
 
     override func viewDidLoad() {
