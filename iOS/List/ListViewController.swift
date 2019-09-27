@@ -51,9 +51,21 @@ class ListViewController: UITableViewController, ListSelectionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.white]
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.backgroundColor = UIColor.init(named: "AppBlue")
+
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        } else {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            navigationItem.hidesSearchBarWhenScrolling = false
+        }
 
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
@@ -65,7 +77,6 @@ class ListViewController: UITableViewController, ListSelectionDelegate {
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = convertToNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: UIColor.white])
 
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
 
         definesPresentationContext = true
 
