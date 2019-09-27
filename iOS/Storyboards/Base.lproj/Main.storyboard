@@ -394,19 +394,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search" id="Zdf-7t-Un8"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="4gW-px-se7" id="cva-RE-VkJ"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="4gW-px-se7">
-                    <connections>
-                        <outlet property="delegate" destination="7bK-jq-Zjz" id="Bvb-rb-sIU"/>
-                        <outlet property="searchContentsController" destination="7bK-jq-Zjz" id="WhQ-er-PCT"/>
-                        <outlet property="searchResultsDataSource" destination="7bK-jq-Zjz" id="IZ0-0P-6q0"/>
-                        <outlet property="searchResultsDelegate" destination="7bK-jq-Zjz" id="KVR-74-382"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="708.69565217391312" y="-630.16304347826087"/>
         </scene>
