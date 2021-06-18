@@ -90,7 +90,7 @@ class MarkerViewController: UIViewController, MarkerSelectionDelegate {
         mapView?.delegate = self
     }
 
-    let regionRadius: CLLocationDistance = 1000 //metres
+    let regionRadius: CLLocationDistance = 1000 // metres
 
     // MARK: Map Style
 
@@ -117,7 +117,7 @@ class MarkerViewController: UIViewController, MarkerSelectionDelegate {
             directionsContainerView.insertSubview(blurEffectView, belowSubview: directionsView)
         }
 
-        //MapStyle segment control
+        // MapStyle segment control
 //        mapStyle?.backgroundColor = .white
 //        mapStyle?.layer.cornerRadius = 4.0
 //        mapStyle?.clipsToBounds = true

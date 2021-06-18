@@ -21,10 +21,10 @@ protocol Marker {
     // Marker ID like KCT040
     var markerId: String { get set }
 
-    //eg DONCASTER EAST
+    // eg DONCASTER EAST
     var locality: String { get set }
 
-    //eg MANNINGHAM CITY
+    // eg MANNINGHAM CITY
     var environmentName: String { get set }
 
     var aRoadName: String { get set }
@@ -35,7 +35,7 @@ protocol Marker {
     var bRoadType: String { get set }
     var bRoadSuffix: String { get set }
 
-    //eg TURNTABLE CAR PARK
+    // eg TURNTABLE CAR PARK
     var markerAddress: String { get set }
 }
 
@@ -68,7 +68,7 @@ extension Marker {
     }
 
     var localizedInstructions: String {
-        //The directions text in the dataset is gross… wish I could do more than this
+        // The directions text in the dataset is gross… wish I could do more than this
         let title = "EMERG MRKR \(markerId): "
 
         return directions
