@@ -104,24 +104,31 @@ class MoreInfoViewController: UITableViewController {
     // MARK: Copying!
 
     override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.section == 0
+        return true
     }
 
     override func tableView(_ tableView: UITableView, canPerformAction action: Selector,
                             forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return indexPath.section == 0 && action == #selector(copy(_:))
+        return action == #selector(copy(_:))
     }
 
     override func tableView(_ tableView: UITableView, performAction action: Selector,
                             forRowAt indexPath: IndexPath, withSender sender: Any?) {
-
-        guard action == #selector(copy(_:)),
-            indexPath.section == 0 else {
+        guard action == #selector(copy(_:)) else {
                 return
         }
 
-        if let value = self.markerAttributes?[indexPath.row].value {
-            UIPasteboard.general.string = "\(value)"
+        switch indexPath.section {
+        case 0:
+            if let value = self.markerAttributes?[indexPath.row].value {
+                UIPasteboard.general.string = "\(value)"
+            }
+
+        case 1:
+            UIPasteboard.general.string = marker?.localizedInstructions
+
+        default:
+            assertionFailure("Unexpected section index")
         }
     }
 
