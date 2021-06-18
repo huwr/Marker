@@ -81,8 +81,12 @@ class MoreInfoViewController: UITableViewController {
                 cell: tableView.dequeueReusableCell(withIdentifier: "attributeCell", for: indexPath),
                 attributes: self.markerAttributes?[indexPath.row],
                 index: indexPath.row)
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "bigInstructionsCell", for: indexPath) as! CopyableBigTableViewCell
+            cell.title = marker?.localizedInstructions ?? ""
+            return cell
         default:
-            return tableView.dequeueReusableCell(withIdentifier: "instructionsCell", for: indexPath)
+            fatalError("Unexpected section index")
         }
     }
 
@@ -121,18 +125,10 @@ class MoreInfoViewController: UITableViewController {
         }
     }
 
-    // MARK: Segueing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SEGUESHOWDIRECTIONS, let instructionsVC = segue.destination as? InstructionsViewController {
-            instructionsVC.marker = marker
-        }
-    }
-
     // MARK: Sharing
 
     @IBAction func sharePressed(_ sender: UIBarButtonItem) {
-        sharer?.presentShareDialog()
+        sharer?.presentShareDialog(sender: sender)
     }
 
 }
