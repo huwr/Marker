@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-protocol MarkerSelectionDelegate: class {
+protocol MarkerSelectionDelegate: AnyObject {
     func select(_ marker: Marker)
     var location: CLLocation? { get set }
     var allMarkers: [Marker]? { get set }

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-protocol ListSelectionDelegate: class {
+protocol ListSelectionDelegate: AnyObject {
     func didSelect(_ marker: Marker?)
 }
 
