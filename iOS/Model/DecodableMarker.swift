@@ -9,30 +9,24 @@
 import Foundation
 
 struct DecodableMarker: Marker, Decodable {
-    var latitude: Double
-
-    var longitude: Double
-
-    var directions: String
-
     var markerId: String
 
-    var locality: String
+    var latitude: Double
+    var longitude: Double
 
     var environmentName: String
 
     var aRoadName: String
-
     var aRoadType: String
-
     var aRoadSuffix: String
 
     var bRoadName: String
-
     var bRoadType: String
-
     var bRoadSuffix: String
 
+    var locality: String
+
+    var directions: String
     var markerAddress: String
 
     enum CodingKeys: String, CodingKey {
