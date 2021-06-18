@@ -81,11 +81,12 @@ class MarkerViewController: UIViewController, MarkerSelectionDelegate {
         let coordinateRegion = MKCoordinateRegion.init(center: marker.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView?.setRegion(coordinateRegion, animated: true)
 
-        let annotations = allMarkers?.map { $0.pointAnnotation }
-        if let annotations = annotations {
-            mapView?.removeAnnotations(annotations)
-            mapView?.addAnnotations(annotations)
-        }
+        mapView?.addAnnotation(marker.pointAnnotation)
+//        let annotations = allMarkers?.map { $0.pointAnnotation }
+//        if let annotations = annotations {
+//            mapView?.removeAnnotations(annotations)
+//            mapView?.addAnnotations(annotations)
+//        }
 
         mapView?.delegate = self
     }
