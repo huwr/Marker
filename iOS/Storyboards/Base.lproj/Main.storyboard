@@ -242,7 +242,7 @@
                                 <action selector="dismiss" destination="Gqa-Vy-TF0" id="Xco-Sh-nne"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="FNR-Fp-49V">
+                        <barButtonItem key="rightBarButtonItem" title="Share…" id="FNR-Fp-49V">
                             <connections>
                                 <action selector="sharePressed:" destination="Gqa-Vy-TF0" id="aNT-sd-H0G"/>
                             </connections>

@@ -41,9 +41,10 @@ struct MarkerSharer {
         viewController?.present(alert, animated: true, completion: nil)
     }
 
-    func presentShareDialog() {
+    func presentShareDialog(sender: UIBarButtonItem?) {
         guard let marker = marker else { return }
         let activityViewController = UIActivityViewController(activityItems: [marker.sharingDescription], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.barButtonItem = sender
         viewController?.present(activityViewController, animated: true, completion: nil)
     }
 }
