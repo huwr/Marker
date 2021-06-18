@@ -61,6 +61,7 @@ class ListViewController: UITableViewController, ListSelectionDelegate {
             navigationController?.navigationBar.prefersLargeTitles = true
             navigationController?.navigationBar.standardAppearance = navBarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+            navigationController?.navigationBar.backgroundColor = .systemBackground
         } else {
             navigationController?.navigationBar.prefersLargeTitles = true
             navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
