@@ -70,7 +70,7 @@
                                 </items>
                                 <color key="tintColor" name="ControlTint"/>
                             </toolbar>
-                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-1n-Efp">
+                            <view clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-1n-Efp">
                                 <rect key="frame" x="20" y="469" width="374" height="160"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTT-Ei-nCU" userLabel="Directions">

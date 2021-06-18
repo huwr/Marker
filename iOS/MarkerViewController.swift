@@ -52,7 +52,9 @@ class MarkerViewController: UIViewController, MarkerSelectionDelegate {
         showInstructionsButton?.title = directionsHidden ? "Show Instructions" : "Hide Instructions"
         directionsView?.flashScrollIndicators()
         directionsView?.setContentOffset(.zero, animated: true)
-        directionsContainerView?.isHidden = directionsHidden
+        UIView.animate(withDuration: 0.3) {
+            self.directionsContainerView?.alpha = self.directionsHidden ? 0 : 1
+        }
     } }
 
     @IBAction func showDirectionsTapped(_ sender: UIBarButtonItem) {
