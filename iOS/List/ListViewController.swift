@@ -177,13 +177,10 @@ extension ListViewController: CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.distanceFilter = 20
             locationManager.startUpdatingLocation()
-
-            print("start updating location…")
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Location updated!")
         if let lastLocation = locations.last {
             self.currentLocation = lastLocation
         }

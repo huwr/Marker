@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Emergency Markers.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5505739F1FBE8BD000A371FA"
+               BuildableName = "Emergency Markers Tests.xctest"
+               BlueprintName = "Emergency Markers Tests"
+               ReferencedContainer = "container:Emergency Markers.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -37,16 +51,6 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "556F3E60233230EC00CBD4A2"
-               BuildableName = "HuwsTests.xctest"
-               BlueprintName = "HuwsTests"
-               ReferencedContainer = "container:Emergency Markers.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
