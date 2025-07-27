@@ -1,3 +1,7 @@
+> **⚠️ This app has been removed from sale on the App Store.**
+>
+> It's been a very long time since I've been able to have any time to update it, and I probably won't get time to give it what it deserves. I made this before I was an iOS developer. Honestly, the best thing would be to re-create it from scratch, possibly with an auto-updating catalogue of markers.
+
 Victorian Emergency Markers
 =========
 
